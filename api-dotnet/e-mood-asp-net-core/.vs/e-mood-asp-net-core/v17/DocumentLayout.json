@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,11 +18,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Users.cs",
+              "RelativeDocumentMoniker": "e-mood-asp-net-core\\Users.cs",
+              "ToolTip": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Users.cs",
+              "RelativeToolTip": "e-mood-asp-net-core\\Users.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T22:01:21.908Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -26,7 +43,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Program.cs",
               "RelativeDocumentMoniker": "e-mood-asp-net-core\\Program.cs",
