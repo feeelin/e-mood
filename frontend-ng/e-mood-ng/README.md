@@ -1,6 +1,3 @@
-docker build -t registry.nakodeelee.ru/emood-ng:v1 .
-docker push registry.nakodeelee.ru/emood-ng:v1
-
 # EMoodNg
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
