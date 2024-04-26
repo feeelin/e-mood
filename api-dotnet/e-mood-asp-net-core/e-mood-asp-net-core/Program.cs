@@ -9,12 +9,12 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.UseSwagger(c => { c.RouteTemplate = "api/swagger/{documentName}/swagger.json"; });
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "EMood API V1");
+    c.RoutePrefix = "api/swagger";
+});
 
 app.UseAuthorization();
 
