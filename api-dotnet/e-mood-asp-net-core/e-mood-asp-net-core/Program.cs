@@ -19,5 +19,5 @@ app.UseSwaggerUI(c =>
 app.UseAuthorization();
 
 app.MapControllers();
-
+//gjikj dct yfabu
 app.Run();
