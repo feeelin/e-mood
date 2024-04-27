@@ -6,11 +6,11 @@ import {useEffect, useState} from "react";
 // @ts-ignore
 import {React} from 'react'
 
-type onClickFunction = (props: any) => any;
+type onClickFunction = (props?: any) => any;
 type setActiveCallback = React.Dispatch<React.SetStateAction<boolean>>;
 
 interface Props{
-    title: string,
+    title: string;
     subtitle: string;
     icon: string;
     onClick?: onClickFunction;

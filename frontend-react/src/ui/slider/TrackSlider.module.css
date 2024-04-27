@@ -1,3 +1,4 @@
 .container{
-    windth: 90vw;
+    display: flex;
+    justify-content: center;
 }

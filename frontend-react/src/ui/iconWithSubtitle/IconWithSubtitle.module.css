@@ -14,8 +14,15 @@
 .textContainer{
     display: flex;
     flex-direction: column;
-    gap: 0.5vh;
     color: white;
+}
+
+.textContainer > h2{
+    font-size: 2vh;
+}
+
+.textContainer > p{
+    font-size: 1.5vh;
 }
 
 .subtitle{
@@ -29,7 +36,6 @@
 
 @media screen and (max-width: 500px){
     .container{
-        overflow-x: scroll;
-        padding: 0.5vh 5vw;
+        padding: 0.5vh 2vw;
     }
 }
