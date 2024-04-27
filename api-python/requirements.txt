@@ -4,3 +4,6 @@ diffusers
 IPython.display
 torch
 gradio
+scipy
+numpy
+wave
