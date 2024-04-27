@@ -1,6 +1,7 @@
 import IconWithSubtitle from "../../ui/iconWithSubtitle/IconWithSubtitle.tsx";
 import classes from './modeSelection.module.css'
 import {useEffect, useState} from "react";
+import PlaylistSelectionButton from "../../modules/playlistSelectionButton/PlaylistSelectionButton.tsx";
 
 interface Props{
     playlist_title: string,
@@ -37,11 +38,10 @@ const ModeSelection = (props: Props) => {
 
     return (
         <div className={classes.container}>
-            <IconWithSubtitle
-                title={props.playlist_title}
-                subtitle={playlistDescription}
-                icon={'queue_music'}
-                active={playlistActive}
+            <PlaylistSelectionButton
+                playlistTitle={'Rock Classic'}
+                playlistDescription={playlistDescription}
+                playlistActive={playlistActive}
                 setActive={setPlaylistActive}
             />
 

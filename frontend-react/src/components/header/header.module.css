@@ -1,0 +1,8 @@
+.container{
+    height: fit-content;
+    padding: 0.01vh 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #004f4e;
+}

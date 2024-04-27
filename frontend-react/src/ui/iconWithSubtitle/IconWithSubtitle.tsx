@@ -6,7 +6,7 @@ import {useEffect, useState} from "react";
 // @ts-ignore
 import {React} from 'react'
 
-type onClickFunction = () => any;
+type onClickFunction = (props: any) => any;
 type setActiveCallback = React.Dispatch<React.SetStateAction<boolean>>;
 
 interface Props{
