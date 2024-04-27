@@ -20,13 +20,15 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MoodPlaylistTableComponent } from './mood-playlist-table/mood-playlist-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoodNavigationComponent,
     MoodDashboardComponent,
-    MoodTrackTableComponent
+    MoodTrackTableComponent,
+    MoodPlaylistTableComponent
   ],
   imports: [
     MatSlideToggleModule,
