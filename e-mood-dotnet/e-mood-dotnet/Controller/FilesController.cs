@@ -44,6 +44,6 @@ public class FilesController : ControllerBase
         if(stream == null)
             return NotFound();
 
-        return File(stream, "application/octet-stream", "1.mp3"); // returns a FileStreamResult
+        return File(stream, "application/octet-stream", $"{id}.mp3"); // returns a FileStreamResult
     }
 }
