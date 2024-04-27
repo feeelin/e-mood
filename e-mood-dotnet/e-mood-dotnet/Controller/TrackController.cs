@@ -38,7 +38,6 @@ public class TrackController : ControllerBase
         return Ok(track);
     }
     
-    
     [ProducesResponseType(typeof(Track), StatusCodes.Status200OK)]
     [HttpGet("ListTracks")]
     public async Task<IActionResult> GetTrack(Guid id)

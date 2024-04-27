@@ -27,9 +27,33 @@ public class GeneratorController : ControllerBase
         {
             Name = "Sergey",
             Surname = "Evseev",
-            PictureUrl = "https://cdn.eureka-team.ru/avatar/hacker.png"
+            PictureUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
         });
-        
+        _context.Users.Add(new User()
+        {
+            Name = "Ivan",
+            Surname = "Ivanov",
+            PictureUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
+        });
+        _context.Users.Add(new User()
+        {
+            Name = "Varvara",
+            Surname = "Evseeva",
+            PictureUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
+        });
+        _context.Users.Add(new User()
+        {
+            Name = "Bob",
+            Surname = "Seriy",
+            PictureUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
+        });
+        _context.Users.Add(new User()
+        {
+            Name = "Igor",
+            Surname = "Evseev",
+            PictureUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
+        });
+
         _context.Playlists.Add(new Playlist()
         {
             Name = "Sergey",
@@ -40,6 +64,70 @@ public class GeneratorController : ControllerBase
                 new User()
                 {
                     Name = "Sergey",
+                    Surname = "Evseev",
+                    PictureUrl = "https://cdn.eureka-team.ru/avatar/hacker.png"
+                }
+            },
+            OwnerId = Guid.NewGuid()
+        });
+        _context.Playlists.Add(new Playlist()
+        {
+            Name = "Ivan",
+            Description = "Ivanov",
+            CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
+            Subscribers = new List<User>()
+            {
+                new User()
+                {
+                    Name = "Ivan",
+                    Surname = "Ivanov",
+                    PictureUrl = "https://cdn.eureka-team.ru/avatar/hacker.png"
+                }
+            },
+            OwnerId = Guid.NewGuid()
+        });
+        _context.Playlists.Add(new Playlist()
+        {
+            Name = "Varvara",
+            Description = "Evseeva",
+            CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
+            Subscribers = new List<User>()
+            {
+                new User()
+                {
+                    Name = "Varvara",
+                    Surname = "Evseeva",
+                    PictureUrl = "https://cdn.eureka-team.ru/avatar/hacker.png"
+                }
+            },
+            OwnerId = Guid.NewGuid()
+        });
+        _context.Playlists.Add(new Playlist()
+        {
+            Name = "Bob",
+            Description = "Seriy",
+            CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
+            Subscribers = new List<User>()
+            {
+                new User()
+                {
+                    Name = "Bob",
+                    Surname = "Seriy",
+                    PictureUrl = "https://cdn.eureka-team.ru/avatar/hacker.png"
+                }
+            },
+            OwnerId = Guid.NewGuid()
+        });
+        _context.Playlists.Add(new Playlist()
+        {
+            Name = "Igor",
+            Description = "Evseev",
+            CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
+            Subscribers = new List<User>()
+            {
+                new User()
+                {
+                    Name = "Igor",
                     Surname = "Evseev",
                     PictureUrl = "https://cdn.eureka-team.ru/avatar/hacker.png"
                 }
@@ -61,7 +149,63 @@ public class GeneratorController : ControllerBase
                 OwnerId = Guid.NewGuid()
             }
         });
-        
+        _context.Tracks.Add(new Track()
+        {
+            Title = "Gonna Get Tou Someday",
+            Artist = "Wig Wam",
+            Duration = TimeSpan.FromSeconds(120),
+            Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
+            Playlist = new Playlist()
+            {
+                Name = "Ivan",
+                Description = "Ivanov",
+                CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
+                OwnerId = Guid.NewGuid()
+            }
+        });
+        _context.Tracks.Add(new Track()
+        {
+            Title = "Rock You Like a Hurricane",
+            Artist = "Scorpions",
+            Duration = TimeSpan.FromSeconds(120),
+            Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
+            Playlist = new Playlist()
+            {
+                Name = "Varvara",
+                Description = "Evseeva",
+                CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
+                OwnerId = Guid.NewGuid()
+            }
+        });
+        _context.Tracks.Add(new Track()
+        {
+            Title = "We're Gonna Make If",
+            Artist = "Twisted Sister",
+            Duration = TimeSpan.FromSeconds(120),
+            Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
+            Playlist = new Playlist()
+            {
+                Name = "Bob",
+                Description = "Seriy",
+                CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
+                OwnerId = Guid.NewGuid()
+            }
+        });
+        _context.Tracks.Add(new Track()
+        {
+            Title = "Wait For Me",
+            Artist = "Jeff The second",
+            Duration = TimeSpan.FromSeconds(120),
+            Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
+            Playlist = new Playlist()
+            {
+                Name = "Igor",
+                Description = "Evseev",
+                CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
+                OwnerId = Guid.NewGuid()
+            }
+        });
+
         return Ok();
     }
 }
