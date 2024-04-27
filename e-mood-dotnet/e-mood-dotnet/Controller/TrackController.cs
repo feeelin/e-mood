@@ -27,14 +27,7 @@ public class TrackController : ControllerBase
     [HttpGet("GetTrack")]
     public async Task<IActionResult> GetTrack()
     {
-        var ssoTrackClaim = HttpContext.User.Claims.First(claim => claim.Type == ClaimTypes.NameIdentifier);
-        Guid.TryParse(ssoTrackClaim.Value, out var TrackId);
-        
-        var track = await _context.Tracks
-            .FirstOrDefaultAsync(Track => Track.Id == TrackId);
-
-        if (track is null) return NotFound();
-
+        var track = await _context.Tracks.FirstOrDefaultAsync();
         return Ok(track);
     }
     
@@ -42,11 +35,7 @@ public class TrackController : ControllerBase
     [HttpGet("ListTracks")]
     public async Task<IActionResult> GetTrack(Guid id)
     {
-        var track = await _context.Tracks
-            .FirstOrDefaultAsync(Track => Track.Id == id);
-
-        if (track is null) return NotFound();
-
+        var track = await _context.Tracks.ToListAsync();
         return Ok(track);
     }
 

@@ -27,14 +27,7 @@ public class UserController : ControllerBase
     [HttpGet("GetUser")]
     public async Task<IActionResult> GetUser()
     {
-        var ssoUserClaim = HttpContext.User.Claims.First(claim => claim.Type == ClaimTypes.NameIdentifier);
-        Guid.TryParse(ssoUserClaim.Value, out var userId);
-        
-        var user = await _context.Users
-            .FirstOrDefaultAsync(user => user.Id == userId);
-
-        if (user is null) return NotFound();
-
+        var user = await _context.Users.FirstOrDefaultAsync();
         return Ok(user);
     }
     
@@ -43,11 +36,7 @@ public class UserController : ControllerBase
     [HttpGet("ListUsers")]
     public async Task<IActionResult> GetUser(Guid id)
     {
-        var user = await _context.Users
-            .FirstOrDefaultAsync(user => user.Id == id);
-
-        if (user is null) return NotFound();
-
+        var user = await _context.Users.ToListAsync();
         return Ok(user);
     }
 

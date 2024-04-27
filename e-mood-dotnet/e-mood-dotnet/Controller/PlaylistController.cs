@@ -27,14 +27,7 @@ public class PlaylistController : ControllerBase
     [HttpGet("GetPlaylist")]
     public async Task<IActionResult> GetPlaylist()
     {
-        var ssoPlaylistClaim = HttpContext.User.Claims.First(claim => claim.Type == ClaimTypes.NameIdentifier);
-        Guid.TryParse(ssoPlaylistClaim.Value, out var PlaylistId);
-        
-        var playlist = await _context.Playlists
-            .FirstOrDefaultAsync(playlist => playlist.Id == PlaylistId);
-
-        if (playlist is null) return NotFound();
-
+        var playlist = await _context.Playlists.FirstOrDefaultAsync();
         return Ok(playlist);
     }
     
@@ -43,12 +36,7 @@ public class PlaylistController : ControllerBase
     [HttpGet("ListPlaylists")]
     public async Task<IActionResult> GetPlaylist(Guid id)
     {
-        var playlist = await _context.Playlists
-            .FirstOrDefaultAsync(playlist => playlist.Id == id);
-
-        if (playlist is null) return NotFound();
-
+        var playlist = await _context.Playlists.ToListAsync();
         return Ok(playlist);
     }
-
 }

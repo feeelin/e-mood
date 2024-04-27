@@ -206,6 +206,8 @@ public class GeneratorController : ControllerBase
             }
         });
 
+        await _context.SaveChangesAsync();
+        
         return Ok();
     }
 }
