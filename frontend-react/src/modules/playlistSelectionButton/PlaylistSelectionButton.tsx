@@ -38,7 +38,9 @@ const PlaylistSelectionButton = (props: Props) => {
                 active={props.playlistActive}
                 setActive={props.setActive}
                 onClick={
-                (event) => handleClickOpen()}
+                // @ts-ignore
+                (event) => handleClickOpen()
+            }
             />
         </div>
     );
