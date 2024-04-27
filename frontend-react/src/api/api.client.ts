@@ -16,6 +16,7 @@ export class Playlist implements IPlaylist {
     description?: string | undefined;
     ownerId?: string;
     subscribers?: User[] | undefined;
+    tracks?: Track[] | undefined;
     coverUrl?: string | undefined;
 
     constructor(data?: IPlaylist) {
@@ -37,6 +38,11 @@ export class Playlist implements IPlaylist {
                 this.subscribers = [] as any;
                 for (let item of _data["subscribers"])
                     this.subscribers!.push(User.fromJS(item));
+            }
+            if (Array.isArray(_data["tracks"])) {
+                this.tracks = [] as any;
+                for (let item of _data["tracks"])
+                    this.tracks!.push(Track.fromJS(item));
             }
             this.coverUrl = _data["coverUrl"];
         }
@@ -60,6 +66,11 @@ export class Playlist implements IPlaylist {
             for (let item of this.subscribers)
                 data["subscribers"].push(item.toJSON());
         }
+        if (Array.isArray(this.tracks)) {
+            data["tracks"] = [];
+            for (let item of this.tracks)
+                data["tracks"].push(item.toJSON());
+        }
         data["coverUrl"] = this.coverUrl;
         return data;
     }
@@ -71,6 +82,7 @@ export interface IPlaylist {
     description?: string | undefined;
     ownerId?: string;
     subscribers?: User[] | undefined;
+    tracks?: Track[] | undefined;
     coverUrl?: string | undefined;
 }
 
@@ -80,7 +92,6 @@ export class Track implements ITrack {
     artist?: string | undefined;
     url?: string | undefined;
     duration?: string;
-    playlist?: Playlist;
 
     constructor(data?: ITrack) {
         if (data) {
@@ -98,7 +109,6 @@ export class Track implements ITrack {
             this.artist = _data["artist"];
             this.url = _data["url"];
             this.duration = _data["duration"];
-            this.playlist = _data["playlist"] ? Playlist.fromJS(_data["playlist"]) : <any>undefined;
         }
     }
 
@@ -116,7 +126,6 @@ export class Track implements ITrack {
         data["artist"] = this.artist;
         data["url"] = this.url;
         data["duration"] = this.duration;
-        data["playlist"] = this.playlist ? this.playlist.toJSON() : <any>undefined;
         return data;
     }
 }
@@ -127,7 +136,6 @@ export interface ITrack {
     artist?: string | undefined;
     url?: string | undefined;
     duration?: string;
-    playlist?: Playlist;
 }
 
 export class User implements IUser {
@@ -176,4 +184,9 @@ export interface IUser {
     name?: string | undefined;
     surname?: string | undefined;
     pictureUrl?: string | undefined;
+}
+
+export interface FileParameter {
+    data: any;
+    fileName: string;
 }
