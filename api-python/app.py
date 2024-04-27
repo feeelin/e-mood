@@ -5,6 +5,10 @@ from IPython.display import Audio
 import torch
 import scipy
 import gradio as gr
+import numpy as np
+from scipy.io.wavfile import write
+import numpy as np
+import wave
 
 app = Flask(__name__)
 
@@ -21,34 +25,21 @@ def get_track():
 def generate_track():
     repo_id = "cvssp/audioldm2"
     pipe = AudioLDM2Pipeline.from_pretrained(
-        repo_id,
-        torch_dtype=torch.float16,
+    repo_id,
+    torch_dtype=torch.float16,
     ).to("cuda")
     prompt = "Создайте спокойную инструментальную музыку в стиле эмбиент."
 
     audio = pipe(prompt).audios[0]
+    with wave.open('output.wav', 'wb') as wav_file:
+        # Устанавливаем параметры файла
+        wav_file.setnchannels(1)
+        wav_file.setsampwidth(2)
+        wav_file.setframerate(44100)
 
-
-    Audio(audio, rate=16000)
-
-    def create_music(prompt):
-        negative_prompt = "Low quality"
-        audio = pipe(
-            prompt,
-            negative_prompt=negative_prompt,
-            audio_length_in_s=10.24,
-            generator=generator,
-        ).audios[0]
-        return 16000, audio
-
-    interface = gr.Interface(
-        title="Music Generation App",
-        examples=["A cheerful ukulele strumming in a beachside jam."],
-        fn=create_music,
-        inputs=gr.Textbox(),
-        outputs="audio",
-    ).launch(debug=True, share=True)
-    return send_file("generated_music.wav")
+        # Записываем данные в файл
+        wav_file.writeframes(audio.tobytes())
+        return send_file('output.wav', mimetype='audio/wav')
 
 
 if __name__ == '__main__':
