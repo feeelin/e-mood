@@ -8,4 +8,13 @@
 
 .button{
     flex-grow: 1;
+    width: 20vw;
+    white-space:nowrap;
+}
+
+@media screen and (max-width: 500px) {
+    .button {
+        width: 100vw;
+    }
+
 }
