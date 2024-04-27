@@ -11,7 +11,7 @@ using e_mood_dotnet.Context;
 namespace e_mood_dotnet.Migrations
 {
     [DbContext(typeof(MusicContext))]
-    [Migration("20240427150014_InitialCreate")]
+    [Migration("20240427171521_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace e_mood_dotnet.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT")
-                        .HasDefaultValue(new Guid("a90d0216-fdd0-43c6-b955-2eb9100b2f40"));
+                        .HasDefaultValue(new Guid("fa096b85-56e4-4a71-925b-25c036abffeb"));
 
                     b.Property<string>("CoverUrl")
                         .IsRequired()
@@ -52,7 +52,7 @@ namespace e_mood_dotnet.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT")
-                        .HasDefaultValue(new Guid("fb85a8b0-7464-4430-9317-722ebed2b3b0"));
+                        .HasDefaultValue(new Guid("780da900-73da-466f-9dc4-2c5ed2b7454c"));
 
                     b.Property<string>("Artist")
                         .IsRequired()
@@ -61,7 +61,7 @@ namespace e_mood_dotnet.Migrations
                     b.Property<TimeSpan>("Duration")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("PlaylistId")
+                    b.Property<Guid?>("PlaylistId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
@@ -84,7 +84,7 @@ namespace e_mood_dotnet.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT")
-                        .HasDefaultValue(new Guid("7517e931-b46f-4f8d-ad01-02cbdccb88b5"));
+                        .HasDefaultValue(new Guid("1a071b25-0588-4f0b-b5c3-61da23706f98"));
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -110,13 +110,9 @@ namespace e_mood_dotnet.Migrations
 
             modelBuilder.Entity("e_mood_dotnet.Track", b =>
                 {
-                    b.HasOne("e_mood_dotnet.Playlist", "Playlist")
-                        .WithMany()
-                        .HasForeignKey("PlaylistId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Playlist");
+                    b.HasOne("e_mood_dotnet.Playlist", null)
+                        .WithMany("Tracks")
+                        .HasForeignKey("PlaylistId");
                 });
 
             modelBuilder.Entity("e_mood_dotnet.User", b =>
@@ -129,6 +125,8 @@ namespace e_mood_dotnet.Migrations
             modelBuilder.Entity("e_mood_dotnet.Playlist", b =>
                 {
                     b.Navigation("Subscribers");
+
+                    b.Navigation("Tracks");
                 });
 #pragma warning restore 612, 618
         }

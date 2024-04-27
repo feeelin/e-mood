@@ -76,13 +76,6 @@ public class GeneratorController : ControllerBase
                     Artist = "Jeff The second",
                     Duration = TimeSpan.FromSeconds(120),
                     Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                    Playlist = new Playlist()
-                    {
-                        Name = "Igor",
-                        Description = "Evseev",
-                        CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                        OwnerId = Guid.NewGuid()
-                    }
                 },
                 new Track()
                 {
@@ -90,13 +83,6 @@ public class GeneratorController : ControllerBase
                     Artist = "Jeff The second",
                     Duration = TimeSpan.FromSeconds(120),
                     Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                    Playlist = new Playlist()
-                    {
-                        Name = "Igor",
-                        Description = "Evseev",
-                        CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                        OwnerId = Guid.NewGuid()
-                    }
                 }
             },
             OwnerId = Guid.NewGuid()
@@ -123,13 +109,6 @@ public class GeneratorController : ControllerBase
                     Artist = "Jeff The second",
                     Duration = TimeSpan.FromSeconds(120),
                     Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                    Playlist = new Playlist()
-                    {
-                        Name = "Igor",
-                        Description = "Evseev",
-                        CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                        OwnerId = Guid.NewGuid()
-                    }
                 },
                 new Track()
                 {
@@ -137,13 +116,6 @@ public class GeneratorController : ControllerBase
                     Artist = "Jeff The second",
                     Duration = TimeSpan.FromSeconds(120),
                     Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                    Playlist = new Playlist()
-                    {
-                        Name = "Igor",
-                        Description = "Evseev",
-                        CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                        OwnerId = Guid.NewGuid()
-                    }
                 }
             },
             OwnerId = Guid.NewGuid()
@@ -171,13 +143,6 @@ public class GeneratorController : ControllerBase
                     Artist = "Jeff The second",
                     Duration = TimeSpan.FromSeconds(120),
                     Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                    Playlist = new Playlist()
-                    {
-                        Name = "Igor",
-                        Description = "Evseev",
-                        CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                        OwnerId = Guid.NewGuid()
-                    }
                 },
                 new Track()
                 {
@@ -185,13 +150,6 @@ public class GeneratorController : ControllerBase
                     Artist = "Jeff The second",
                     Duration = TimeSpan.FromSeconds(120),
                     Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                    Playlist = new Playlist()
-                    {
-                        Name = "Igor",
-                        Description = "Evseev",
-                        CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                        OwnerId = Guid.NewGuid()
-                    }
                 }
             },
             OwnerId = Guid.NewGuid()
@@ -219,13 +177,6 @@ public class GeneratorController : ControllerBase
                     Artist = "Jeff The second",
                     Duration = TimeSpan.FromSeconds(120),
                     Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                    Playlist = new Playlist()
-                    {
-                        Name = "Igor",
-                        Description = "Evseev",
-                        CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                        OwnerId = Guid.NewGuid()
-                    }
                 },
                 new Track()
                 {
@@ -233,13 +184,6 @@ public class GeneratorController : ControllerBase
                     Artist = "Jeff The second",
                     Duration = TimeSpan.FromSeconds(120),
                     Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                    Playlist = new Playlist()
-                    {
-                        Name = "Igor",
-                        Description = "Evseev",
-                        CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                        OwnerId = Guid.NewGuid()
-                    }
                 }
             },
             OwnerId = Guid.NewGuid()
@@ -267,13 +211,6 @@ public class GeneratorController : ControllerBase
                     Artist = "Jeff The second",
                     Duration = TimeSpan.FromSeconds(120),
                     Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                    Playlist = new Playlist()
-                    {
-                        Name = "Igor",
-                        Description = "Evseev",
-                        CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                        OwnerId = Guid.NewGuid()
-                    }
                 },
                 new Track()
                 {
@@ -281,13 +218,6 @@ public class GeneratorController : ControllerBase
                     Artist = "Jeff The second",
                     Duration = TimeSpan.FromSeconds(120),
                     Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                    Playlist = new Playlist()
-                    {
-                        Name = "Igor",
-                        Description = "Evseev",
-                        CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                        OwnerId = Guid.NewGuid()
-                    }
                 }
             },
             OwnerId = Guid.NewGuid()
@@ -299,13 +229,6 @@ public class GeneratorController : ControllerBase
             Artist = "Rick Astley",
             Duration = TimeSpan.FromSeconds(120),
             Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
-            Playlist = new Playlist()
-            {
-                Name = "Sergey",
-                Description = "Evseev",
-                CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                OwnerId = Guid.NewGuid()
-            }
         });
         _context.Tracks.Add(new Track()
         {
@@ -313,13 +236,6 @@ public class GeneratorController : ControllerBase
             Artist = "Wig Wam",
             Duration = TimeSpan.FromSeconds(120),
             Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
-            Playlist = new Playlist()
-            {
-                Name = "Ivan",
-                Description = "Ivanov",
-                CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                OwnerId = Guid.NewGuid()
-            }
         });
         _context.Tracks.Add(new Track()
         {
@@ -327,13 +243,6 @@ public class GeneratorController : ControllerBase
             Artist = "Scorpions",
             Duration = TimeSpan.FromSeconds(120),
             Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
-            Playlist = new Playlist()
-            {
-                Name = "Varvara",
-                Description = "Evseeva",
-                CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                OwnerId = Guid.NewGuid()
-            }
         });
         _context.Tracks.Add(new Track()
         {
@@ -341,13 +250,6 @@ public class GeneratorController : ControllerBase
             Artist = "Twisted Sister",
             Duration = TimeSpan.FromSeconds(120),
             Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
-            Playlist = new Playlist()
-            {
-                Name = "Bob",
-                Description = "Seriy",
-                CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                OwnerId = Guid.NewGuid()
-            }
         });
         _context.Tracks.Add(new Track()
         {
@@ -355,13 +257,6 @@ public class GeneratorController : ControllerBase
             Artist = "Jeff The second",
             Duration = TimeSpan.FromSeconds(120),
             Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
-            Playlist = new Playlist()
-            {
-                Name = "Igor",
-                Description = "Evseev",
-                CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
-                OwnerId = Guid.NewGuid()
-            }
         });
 
         await _context.SaveChangesAsync();

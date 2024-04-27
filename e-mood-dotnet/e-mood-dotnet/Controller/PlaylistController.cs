@@ -27,7 +27,9 @@ public class PlaylistController : ControllerBase
     [HttpGet("GetPlaylist")]
     public async Task<IActionResult> GetPlaylist()
     {
-        var playlist = await _context.Playlists.FirstOrDefaultAsync();
+        var playlist = await _context.Playlists
+            .Include(item => item.Tracks)
+            .FirstOrDefaultAsync();
         return Ok(playlist);
     }
     
@@ -36,7 +38,9 @@ public class PlaylistController : ControllerBase
     [HttpGet("ListPlaylists")]
     public async Task<IActionResult> GetPlaylist(Guid id)
     {
-        var playlist = await _context.Playlists.ToListAsync();
+        var playlist = await _context.Playlists
+            .Include(item => item.Tracks)
+            .ToListAsync();
         return Ok(playlist);
     }
 }

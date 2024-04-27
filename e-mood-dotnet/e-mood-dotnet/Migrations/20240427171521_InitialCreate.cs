@@ -15,7 +15,7 @@ namespace e_mood_dotnet.Migrations
                 name: "Playlist",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false, defaultValue: new Guid("a90d0216-fdd0-43c6-b955-2eb9100b2f40")),
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false, defaultValue: new Guid("fa096b85-56e4-4a71-925b-25c036abffeb")),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
                     Description = table.Column<string>(type: "TEXT", nullable: false),
                     OwnerId = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -30,12 +30,12 @@ namespace e_mood_dotnet.Migrations
                 name: "Track",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false, defaultValue: new Guid("fb85a8b0-7464-4430-9317-722ebed2b3b0")),
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false, defaultValue: new Guid("780da900-73da-466f-9dc4-2c5ed2b7454c")),
                     Title = table.Column<string>(type: "TEXT", nullable: false),
                     Artist = table.Column<string>(type: "TEXT", nullable: false),
                     Url = table.Column<string>(type: "TEXT", nullable: false),
                     Duration = table.Column<TimeSpan>(type: "TEXT", nullable: false),
-                    PlaylistId = table.Column<Guid>(type: "TEXT", nullable: false)
+                    PlaylistId = table.Column<Guid>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -44,15 +44,14 @@ namespace e_mood_dotnet.Migrations
                         name: "FK_Track_Playlist_PlaylistId",
                         column: x => x.PlaylistId,
                         principalTable: "Playlist",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
                 name: "User",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false, defaultValue: new Guid("7517e931-b46f-4f8d-ad01-02cbdccb88b5")),
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false, defaultValue: new Guid("1a071b25-0588-4f0b-b5c3-61da23706f98")),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
                     Surname = table.Column<string>(type: "TEXT", nullable: false),
                     PictureUrl = table.Column<string>(type: "TEXT", nullable: false),

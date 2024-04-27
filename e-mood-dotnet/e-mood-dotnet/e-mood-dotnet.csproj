@@ -31,4 +31,9 @@
       <None Remove="Dockerfile" />
     </ItemGroup>
 
+
+    <ItemGroup>
+      <Folder Include="Migrations\" />
+    </ItemGroup>
+
 </Project>

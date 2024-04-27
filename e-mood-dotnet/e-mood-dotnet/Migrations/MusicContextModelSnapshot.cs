@@ -22,7 +22,7 @@ namespace e_mood_dotnet.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT")
-                        .HasDefaultValue(new Guid("daced15b-ac5c-4529-98fb-fb53cc95baa3"));
+                        .HasDefaultValue(new Guid("fa096b85-56e4-4a71-925b-25c036abffeb"));
 
                     b.Property<string>("CoverUrl")
                         .IsRequired()
@@ -49,7 +49,7 @@ namespace e_mood_dotnet.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT")
-                        .HasDefaultValue(new Guid("1f64c7f1-c556-406a-81ae-7db1ebf35cd6"));
+                        .HasDefaultValue(new Guid("780da900-73da-466f-9dc4-2c5ed2b7454c"));
 
                     b.Property<string>("Artist")
                         .IsRequired()
@@ -58,7 +58,7 @@ namespace e_mood_dotnet.Migrations
                     b.Property<TimeSpan>("Duration")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("PlaylistId")
+                    b.Property<Guid?>("PlaylistId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
@@ -81,7 +81,7 @@ namespace e_mood_dotnet.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT")
-                        .HasDefaultValue(new Guid("1bc24198-284e-4695-bcb6-bf056ff56586"));
+                        .HasDefaultValue(new Guid("1a071b25-0588-4f0b-b5c3-61da23706f98"));
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -107,13 +107,9 @@ namespace e_mood_dotnet.Migrations
 
             modelBuilder.Entity("e_mood_dotnet.Track", b =>
                 {
-                    b.HasOne("e_mood_dotnet.Playlist", "Playlist")
+                    b.HasOne("e_mood_dotnet.Playlist", null)
                         .WithMany("Tracks")
-                        .HasForeignKey("PlaylistId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Playlist");
+                        .HasForeignKey("PlaylistId");
                 });
 
             modelBuilder.Entity("e_mood_dotnet.User", b =>

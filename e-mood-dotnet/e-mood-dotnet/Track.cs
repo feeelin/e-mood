@@ -7,5 +7,4 @@ public class Track
     public string Artist { get; set; }
     public string Url { get; set; }
     public TimeSpan Duration { get; set; }
-    public Playlist Playlist { get; set; }
 }
