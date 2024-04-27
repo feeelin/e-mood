@@ -48,10 +48,10 @@ export default function PlaylistSelectionModal(props: Props) {
                         >
                         </IconButton>
                         <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-                            Выбор плейлиста
+                            Обзор плейлистов
                         </Typography>
                         <Button autoFocus color="inherit" onClick={props.handleClose}>
-                            Выбрать
+                            Закрыть
                         </Button>
                     </Toolbar>
                 </AppBar>

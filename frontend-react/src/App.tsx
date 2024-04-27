@@ -2,18 +2,23 @@ import './App.css'
 import Header from "./components/header/header.tsx";
 import Player from "./components/player/Player.tsx";
 import PlayerControl from "./components/playerControl/playerControl.tsx";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 // @ts-ignore
 import useSound from "use-sound";
 
 
 function App() {
+    const currentTrack = 'https://mood.eureka-team.ru/api/Files/Content/3ca496ac-ce63-4350-9ee2-29eb4d3c0fe1.mp3'
+    // @ts-ignore
+    const [currentDuration, setCurrentDuration] = useState(0);
 
     const [isPlaying, setIsPlaying] = useState(false);
-    const [play, { pause, duration, sound }] = useSound('https://cdn.eureka-team.ru/music/1.mp3');
+    const [play, { pause, duration, sound }] = useSound(currentTrack);
 
-    const audioRef = useRef();
-    console.log(audioRef)
+
+    useEffect(() => {
+        console.log(sound)
+    }, [sound]);
 
     useEffect(() => {
         if(isPlaying){
@@ -28,7 +33,7 @@ function App() {
         <Header/>
         <div className={'contentContainer'}>
             <PlayerControl isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
-            <Player/>
+            <Player duration={duration} currentDuration={currentDuration}/>
         </div>
     </div>
   )

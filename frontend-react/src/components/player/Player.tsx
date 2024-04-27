@@ -4,10 +4,15 @@ import TrackSlider from "../../ui/slider/TrackSlider.tsx";
 import classes from './player.module.css'
 import TrackInfo from "../../ui/trackInfo/TrackInfo.tsx";
 
-const Player = () => {
+interface Props{
+    duration: number;
+    currentDuration: number;
+}
+
+const Player = (props: Props) => {
     return (
         <div className={classes.container}>
-            <TrackSlider/>
+            <TrackSlider duration={props.duration} currentDuration={props.currentDuration}/>
             <TrackInfo title={'Something in the way'} performer={'Nirvana'}/>
         </div>
     );
