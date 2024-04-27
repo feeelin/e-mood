@@ -35,7 +35,7 @@ def generate_track():
         # Устанавливаем параметры файла
         wav_file.setnchannels(1)
         wav_file.setsampwidth(2)
-        wav_file.setframerate(44100)
+        wav_file.setframerate(10000)
 
         # Записываем данные в файл
         wav_file.writeframes(audio.tobytes())
