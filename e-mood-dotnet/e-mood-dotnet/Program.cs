@@ -8,7 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<IMusicContext, MusicContext>(options =>
 {
-    options.UseSqlite("Data Source=/app/storage/mood.db");
+    Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "storage"));
+    var datasource = Path.Combine(Directory.GetCurrentDirectory(), "storage", "mood.db");
+    options.UseSqlite($"Data Source={datasource}");
 });
 
 builder.Services
