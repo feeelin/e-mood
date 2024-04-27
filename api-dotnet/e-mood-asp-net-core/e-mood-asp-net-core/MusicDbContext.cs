@@ -8,7 +8,6 @@ namespace e_mood_asp_net_core
         : base(options) { }
 
         public DbSet<User> Users => Set<User>();
-        public DbSet<Group> Groups => Set<Group>();
         public DbSet<PlayList> PlayLists => Set<PlayList>();
         public DbSet<Track> Tracks => Set<Track>();
     }

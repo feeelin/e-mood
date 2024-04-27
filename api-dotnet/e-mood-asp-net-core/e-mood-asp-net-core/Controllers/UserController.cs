@@ -1,112 +1,54 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace e_mood_asp_net_core.Controllers
 {
-    public class UserController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class UserController : ControllerBase
     {
-        private readonly MusicDbContext db;
-        public UserController(MusicDbContext context) {
-            db = context;
-        }    
+        private readonly ILogger<UserController> _logger;
+        private readonly MusicDbContext _context;
 
-
-
-        // GET: UserController
-        public ActionResult Index()
+        public UserController(
+            MusicDbContext context,
+            ILogger<UserController> logger)
         {
-            return View();
+            _context = context;
+            _logger = logger;
         }
 
-        // GET: UserController/Details/5
-        public ActionResult Details(int id)
+        [HttpGet("get-user")]
+        public async Task<User> GetUser()
         {
-            return View();
+            return new User()
+            {
+                Name = "Sergey Evseev"
+            };
         }
-
-        public async Task<IActionResult> Details(int? id)
+        
+        [HttpGet("list-users")]
+        public async Task<IEnumerable<User>> ListUsers()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var student = await db.Users
-                .Include(s => s.Name)
-                    //.ThenInclude(e => e.Surname)
-                .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.Id == id);
-
-            if (student == null)
-            {
-                return NotFound();
-            }
-
-            return View(student);
+            return Enumerable.Range(1, 5).Select(index => new User()
+                {
+                    Id = index,
+                    Name = index.ToString()
+                })
+                .ToArray();
         }
-
-
-
-        // GET: UserController/Create
-
-        [HttpPost]
-        public async Task<IActionResult> Create(User user)
+        
+        
+        [HttpPost("create-user")]
+        public async Task<User> CreateUser()
         {
-            db.Users.Add(user);
-            await db.SaveChangesAsync();
-            return Ok();
+            var user = new User()
+            {
+                Id = 1,
+                Name = "test playlist"
+            };
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+            return user;
         }
-
-
-        // GET: UserController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: UserController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-
-        [HttpPost]
-        public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var user = await db.Users
-                .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            if (saveChangesError.GetValueOrDefault())
-            {
-                ViewData["ErrorMessage"] =
-                    "Delete failed. Try again, and if the problem persists " +
-                    "see your system administrator.";
-            }
-
-            return View(user);
-        }
-
-        // POST: UserController/Delete/5
     }
 }

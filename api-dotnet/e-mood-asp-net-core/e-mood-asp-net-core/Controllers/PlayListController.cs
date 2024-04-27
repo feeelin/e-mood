@@ -1,83 +1,54 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace e_mood_asp_net_core.Controllers
 {
-    public class PlayListController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class PlayListController : ControllerBase
     {
-        // GET: PlayListController
-        public ActionResult Index()
+        private readonly ILogger<PlayListController> _logger;
+        private readonly MusicDbContext _context;
+
+        public PlayListController(
+            MusicDbContext context,
+            ILogger<PlayListController> logger)
         {
-            return View();
+            _context = context;
+            _logger = logger;
         }
 
-        // GET: PlayListController/Details/5
-        public ActionResult Details(int id)
+        [HttpGet("get-playlist")]
+        public async Task<PlayList> GetPlaylist()
         {
-            return View();
-        }
-
-        // GET: PlayListController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: PlayListController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
+            return new PlayList()
             {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+                Name = "Test playlist"
+            };
         }
-
-        // GET: PlayListController/Edit/5
-        public ActionResult Edit(int id)
+        
+        [HttpGet("list-playlists")]
+        public async Task<IEnumerable<PlayList>> ListPlaylists()
         {
-            return View();
+            return Enumerable.Range(1, 5).Select(index => new PlayList
+                {
+                    Id = index,
+                    Name = index.ToString()
+                })
+                .ToArray();
         }
-
-        // POST: PlayListController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        
+        
+        [HttpPost("create-playlist")]
+        public async Task<PlayList> CreateGroup()
         {
-            try
+            var playList = new PlayList()
             {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: PlayListController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: PlayListController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+                Id = 1,
+                Name = "test playlist"
+            };
+            _context.PlayLists.Add(playList);
+            await _context.SaveChangesAsync();
+            return playList;
         }
     }
 }

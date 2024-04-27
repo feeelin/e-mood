@@ -1,83 +1,54 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace e_mood_asp_net_core.Controllers
 {
-    public class TrackController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class TrackController : ControllerBase
     {
-        // GET: HomeController
-        public ActionResult Index()
+        private readonly ILogger<TrackController> _logger;
+        private readonly MusicDbContext _context;
+
+        public TrackController(
+            MusicDbContext context,
+            ILogger<TrackController> logger)
         {
-            return View();
+            _context = context;
+            _logger = logger;
         }
 
-        // GET: HomeController/Details/5
-        public ActionResult Details(int id)
+        [HttpGet("get-track")]
+        public async Task<Track> GetTrack()
         {
-            return View();
-        }
-
-        // GET: HomeController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: HomeController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
+            return new Track()
             {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+                Name = "Test track"
+            };
         }
-
-        // GET: HomeController/Edit/5
-        public ActionResult Edit(int id)
+        
+        [HttpGet("list-tracks")]
+        public async Task<IEnumerable<Track>> ListTracks()
         {
-            return View();
+            return Enumerable.Range(1, 5).Select(index => new Track()
+                {
+                    Id = index,
+                    Name = index.ToString()
+                })
+                .ToArray();
         }
-
-        // POST: HomeController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        
+        
+        [HttpPost("create-track")]
+        public async Task<Track> CreateTrack()
         {
-            try
+            var track = new Track()
             {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: HomeController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: HomeController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+                Id = 1,
+                Name = "test playlist"
+            };
+            _context.Tracks.Add(track);
+            await _context.SaveChangesAsync();
+            return track;
         }
     }
 }
