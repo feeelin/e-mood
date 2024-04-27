@@ -1,7 +1,7 @@
-import IconWithSubtitle from "../../ui/iconWithSubtitle/IconWithSubtitle.tsx";
 import classes from './modeSelection.module.css'
 import {useEffect, useState} from "react";
 import PlaylistSelectionButton from "../playlistSelectionButton/PlaylistSelectionButton.tsx";
+import NeuroSelectionButton from "../neuroSelectionButton/NeuroSelectionButton.tsx";
 
 interface Props{
     playlistTitle: string,
@@ -45,10 +45,8 @@ const ModeSelection = (props: Props) => {
                 setActive={setPlaylistActive}
             />
 
-            <IconWithSubtitle
-                title={'Нейро-режим'}
-                subtitle={neuroDescription}
-                icon={'smart_toy'}
+            <NeuroSelectionButton
+                neuroSubtitle={neuroDescription}
                 active={neuroActive}
                 setActive={setNeuroActive}
             />

@@ -38,7 +38,7 @@ export default function PlaylistSelectionModal(props: Props) {
                 onClose={props.handleClose}
                 TransitionComponent={Transition}
             >
-                <AppBar sx={{ position: 'relative' }}>
+                <AppBar sx={{ position: 'relative', backgroundColor: '#004f4e' }}>
                     <Toolbar>
                         <IconButton
                             edge="start"
@@ -48,22 +48,21 @@ export default function PlaylistSelectionModal(props: Props) {
                         >
                         </IconButton>
                         <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-                            Sound
+                            Выбор плейлиста
                         </Typography>
                         <Button autoFocus color="inherit" onClick={props.handleClose}>
-                            save
+                            Выбрать
                         </Button>
                     </Toolbar>
                 </AppBar>
                 <List>
                     <ListItemButton>
-                        <ListItemText primary="Phone ringtone" secondary="Titania" />
+                        <ListItemText primary="Pop music"/>
                     </ListItemButton>
                     <Divider />
                     <ListItemButton>
                         <ListItemText
-                            primary="Default notification ringtone"
-                            secondary="Tethys"
+                            primary="Rock Classic"
                         />
                     </ListItemButton>
                 </List>
