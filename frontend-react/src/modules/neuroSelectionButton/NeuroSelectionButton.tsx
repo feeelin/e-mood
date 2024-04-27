@@ -24,7 +24,7 @@ export default function NeuroSelectionButton(props: Props) {
             <NeuroSelectionModal handleClickOpen={handleClickOpen} handleClose={handleClose} open={open}/>
 
             <IconWithSubtitle
-                title={'Нейро-режим'}
+                title={'Нейрорежим'}
                 subtitle={props.neuroSubtitle}
                 icon={'smart_toy'}
                 active={props.active}

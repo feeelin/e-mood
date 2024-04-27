@@ -7,7 +7,7 @@ const PlayerControl = () => {
     return (
         <div>
             <PlayerControlButtons/>
-            <ModeSelection playlistTitle={'Rock Classic'}/>
+            <ModeSelection playlistTitle={'Rock Classic super beautiful'}/>
         </div>
     );
 };

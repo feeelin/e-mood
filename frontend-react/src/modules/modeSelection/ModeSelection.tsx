@@ -38,18 +38,23 @@ const ModeSelection = (props: Props) => {
 
     return (
         <div className={classes.container}>
-            <PlaylistSelectionButton
-                playlistTitle={props.playlistTitle}
-                playlistDescription={playlistDescription}
-                playlistActive={playlistActive}
-                setActive={setPlaylistActive}
-            />
+            <div className={classes.button}>
+                <PlaylistSelectionButton
+                    playlistTitle={props.playlistTitle}
+                    playlistDescription={playlistDescription}
+                    playlistActive={playlistActive}
+                    setActive={setPlaylistActive}
+                />
+            </div>
 
-            <NeuroSelectionButton
-                neuroSubtitle={neuroDescription}
-                active={neuroActive}
-                setActive={setNeuroActive}
-            />
+            <div className={classes.button}>
+                <NeuroSelectionButton
+                    neuroSubtitle={neuroDescription}
+                    active={neuroActive}
+                    setActive={setNeuroActive}
+                />
+            </div>
+
         </div>
     );
 };
