@@ -3,11 +3,10 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar>Меню</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item href="/dashboard">Главная</a>
+      <a mat-list-item href="/tracks">Треки</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -23,6 +22,6 @@
       }
       <span>e-mood-ng</span>
     </mat-toolbar>
-    <app-mood-dashboard/>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
