@@ -43,7 +43,7 @@ const IconWithSubtitle = (props: Props) => {
         <div className={style.join(' ')} onClick={(event) => clickHandler()}>
             <Icon sx={{color: '#FFFFFF'}} fontSize={'large'}>{props.icon}</Icon>
             <div className={classes.textContainer}>
-                <Typography component={'h2'}>{props.title}</Typography>
+                <Typography component={'h2'} className={classes.firstSlide}>{props.title}</Typography>
                 <Typography variant={'body2'} className={classes.subtitle}>{props.subtitle}</Typography>
             </div>
         </div>

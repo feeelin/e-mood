@@ -1,7 +1,7 @@
-import IconWithSubtitle from "../../ui/iconWithSubtitle/IconWithSubtitle.tsx";
 import classes from './modeSelection.module.css'
 import {useEffect, useState} from "react";
 import PlaylistSelectionButton from "../playlistSelectionButton/PlaylistSelectionButton.tsx";
+import NeuroSelectionButton from "../neuroSelectionButton/NeuroSelectionButton.tsx";
 
 interface Props{
     playlistTitle: string,
@@ -38,20 +38,23 @@ const ModeSelection = (props: Props) => {
 
     return (
         <div className={classes.container}>
-            <PlaylistSelectionButton
-                playlistTitle={props.playlistTitle}
-                playlistDescription={playlistDescription}
-                playlistActive={playlistActive}
-                setActive={setPlaylistActive}
-            />
+            <div className={classes.button}>
+                <PlaylistSelectionButton
+                    playlistTitle={props.playlistTitle}
+                    playlistDescription={playlistDescription}
+                    playlistActive={playlistActive}
+                    setActive={setPlaylistActive}
+                />
+            </div>
 
-            <IconWithSubtitle
-                title={'Нейро-режим'}
-                subtitle={neuroDescription}
-                icon={'smart_toy'}
-                active={neuroActive}
-                setActive={setNeuroActive}
-            />
+            <div className={classes.button}>
+                <NeuroSelectionButton
+                    neuroSubtitle={neuroDescription}
+                    active={neuroActive}
+                    setActive={setNeuroActive}
+                />
+            </div>
+
         </div>
     );
 };

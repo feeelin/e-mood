@@ -1,20 +1,21 @@
 .container{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 0.5vh 3vw;
-    gap: 2vw;
+    gap: 1vw;
     border-radius: 50px;
     border: 3px solid white;
     cursor: pointer;
     flex-wrap: nowrap;
-    text-wrap: nowrap;
-}
+    /*text-wrap: nowrap;*/
+    }
 
 .textContainer{
     display: flex;
     flex-direction: column;
     color: white;
+    overflow: hidden;
 }
 
 .textContainer > h2{
@@ -37,5 +38,68 @@
 @media screen and (max-width: 500px){
     .container{
         padding: 0.5vh 2vw;
+    }
+}
+
+/**/
+
+
+:root {
+    --duration: 9s;
+    --duration-double: 10s;
+}
+
+
+
+
+.firstSlide {
+    display: inline-block;
+    animation-name: slide-then-hide;
+    animation-duration: var(--duration);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: backwards;
+}
+
+.words {
+    font-size: 100px;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+}
+
+.words span {
+    display: inline-block;
+    padding-left: 100%;
+    animation-name: slide;
+    animation-duration: var(--duration-double);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    color: red;
+}
+
+.words--second span {
+    animation-delay: var(--duration);
+    color: blue;
+}
+
+@keyframes slide-then-hide {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        display: none;
+        transform: translate(-100%, 0);
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
     }
 }
