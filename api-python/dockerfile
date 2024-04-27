@@ -1,31 +1,15 @@
-FROM python:3.10-slim
+# syntax=docker/dockerfile:1.4
+FROM --platform=$BUILDPLATFORM python:3.10-alpine AS builder
 
-# Установка зависимостей
-RUN pip install flask
-
-# Копирование кода приложения
-from flask import Flask,send_file, request, jsonify
-
-app = Flask(__name__)
-
-@app.route('/get-track')
-def get_track():
-    return send_file("files/LakiDo Music - Shit Laki (promodj.com).mp3")
-
-
-@app.route('/generate-track', methods=['POST'])
-def generate_track():
-    return "Трек успешно сгенерирован."
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
-. /app
-
-# Установка рабочего каталога
 WORKDIR /app
 
-# Запуск приложения
-CMD ["python", "app.py"]
-docker build -t registry.nakodeelee.ru/mood-python:v1.
-docker push registry.nakodeelee.ru/mood-python:v1
+COPY requirements.txt /app
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip3 install -r requirements.txt
+
+COPY . /app
+
+EXPOSE 80
+
+ENTRYPOINT ["python3"]
+CMD ["app.py"]
