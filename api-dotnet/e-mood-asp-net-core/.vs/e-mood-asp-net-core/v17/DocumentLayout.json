@@ -3,32 +3,44 @@
   "WorkspaceRootPath": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\controllers\\trackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\controllers\\trackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\musicdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\musicdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\controllers\\groupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\controllers\\groupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\controllers\\trackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\controllers\\trackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\track.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,14 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|c:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E7F0BB0-4667-448F-B388-F4EABD9FA923}|e-mood-asp-net-core\\e-mood-asp-net-core.csproj|solutionrelative:e-mood-asp-net-core\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,42 +66,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TrackController.cs",
-              "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Controllers\\TrackController.cs",
-              "RelativeDocumentMoniker": "e-mood-asp-net-core\\Controllers\\TrackController.cs",
-              "ToolTip": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Controllers\\TrackController.cs",
-              "RelativeToolTip": "e-mood-asp-net-core\\Controllers\\TrackController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAArAAAA",
+              "DocumentIndex": 2,
+              "Title": "MusicDbContext.cs",
+              "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\MusicDbContext.cs",
+              "RelativeDocumentMoniker": "e-mood-asp-net-core\\MusicDbContext.cs",
+              "ToolTip": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\MusicDbContext.cs",
+              "RelativeToolTip": "e-mood-asp-net-core\\MusicDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T06:18:03.347Z",
+              "WhenOpened": "2024-04-27T07:50:48.02Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "e-mood-asp-net-core\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Controllers\\UserController.cs",
+              "RelativeToolTip": "e-mood-asp-net-core\\Controllers\\UserController.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAmwCQAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T06:16:09.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlayListController.cs",
+              "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Controllers\\PlayListController.cs",
+              "RelativeDocumentMoniker": "e-mood-asp-net-core\\Controllers\\PlayListController.cs",
+              "ToolTip": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Controllers\\PlayListController.cs",
+              "RelativeToolTip": "e-mood-asp-net-core\\Controllers\\PlayListController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T06:17:48.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\User.cs",
+              "RelativeDocumentMoniker": "e-mood-asp-net-core\\User.cs",
+              "ToolTip": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\User.cs",
+              "RelativeToolTip": "e-mood-asp-net-core\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T22:01:21.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Program.cs",
               "RelativeDocumentMoniker": "e-mood-asp-net-core\\Program.cs",
               "ToolTip": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Program.cs",
               "RelativeToolTip": "e-mood-asp-net-core\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAVAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAcwBcAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-26T18:49:03.439Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PlayListController.cs",
-              "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Controllers\\PlayListController.cs",
-              "RelativeDocumentMoniker": "e-mood-asp-net-core\\Controllers\\PlayListController.cs",
-              "ToolTip": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Controllers\\PlayListController.cs",
-              "RelativeToolTip": "e-mood-asp-net-core\\Controllers\\PlayListController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 9,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "e-mood-asp-net-core\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "e-mood-asp-net-core\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T06:17:48.184Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-27T06:12:16.637Z"
             },
             {
               "$type": "Document",
@@ -114,41 +156,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "e-mood-asp-net-core\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Controllers\\UserController.cs",
-              "RelativeToolTip": "e-mood-asp-net-core\\Controllers\\UserController.cs",
+              "DocumentIndex": 7,
+              "Title": "TrackController.cs",
+              "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Controllers\\TrackController.cs",
+              "RelativeDocumentMoniker": "e-mood-asp-net-core\\Controllers\\TrackController.cs",
+              "ToolTip": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Controllers\\TrackController.cs",
+              "RelativeToolTip": "e-mood-asp-net-core\\Controllers\\TrackController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T06:16:09.977Z",
+              "WhenOpened": "2024-04-27T06:18:03.347Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Controllers\\WeatherForecastController.cs",
-              "RelativeDocumentMoniker": "e-mood-asp-net-core\\Controllers\\WeatherForecastController.cs",
-              "ToolTip": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Controllers\\WeatherForecastController.cs",
-              "RelativeToolTip": "e-mood-asp-net-core\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAABNAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T06:12:16.637Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\User.cs",
-              "RelativeDocumentMoniker": "e-mood-asp-net-core\\User.cs",
-              "ToolTip": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\User.cs",
-              "RelativeToolTip": "e-mood-asp-net-core\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T22:01:21.908Z"
             },
             {
               "$type": "Document",
@@ -160,11 +177,12 @@
               "RelativeToolTip": "e-mood-asp-net-core\\Model.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAAC8AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T22:12:56.741Z"
+              "WhenOpened": "2024-04-26T22:12:56.741Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "Group.cs",
               "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Group.cs",
               "RelativeDocumentMoniker": "e-mood-asp-net-core\\Group.cs",
@@ -172,11 +190,12 @@
               "RelativeToolTip": "e-mood-asp-net-core\\Group.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T22:07:25.264Z"
+              "WhenOpened": "2024-04-26T22:07:25.264Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Track.cs",
               "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\Track.cs",
               "RelativeDocumentMoniker": "e-mood-asp-net-core\\Track.cs",
@@ -188,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "PlayList.cs",
               "DocumentMoniker": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\PlayList.cs",
               "RelativeDocumentMoniker": "e-mood-asp-net-core\\PlayList.cs",

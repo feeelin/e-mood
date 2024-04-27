@@ -1,10 +1,18 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace e_mood_asp_net_core.Controllers
 {
     public class UserController : Controller
     {
+        private readonly MusicDbContext db;
+        public UserController(MusicDbContext context) {
+            db = context;
+        }    
+
+
+
         // GET: UserController
         public ActionResult Index()
         {
@@ -17,26 +25,39 @@ namespace e_mood_asp_net_core.Controllers
             return View();
         }
 
-        // GET: UserController/Create
-        public ActionResult Create()
+        public async Task<IActionResult> Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var student = await db.Users
+                .Include(s => s.Name)
+                    //.ThenInclude(e => e.Surname)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (student == null)
+            {
+                return NotFound();
+            }
+
+            return View(student);
         }
 
-        // POST: UserController/Create
+
+
+        // GET: UserController/Create
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> Create(User user)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            db.Users.Add(user);
+            await db.SaveChangesAsync();
+            return Ok();
         }
+
 
         // GET: UserController/Edit/5
         public ActionResult Edit(int id)
@@ -59,25 +80,33 @@ namespace e_mood_asp_net_core.Controllers
             }
         }
 
-        // GET: UserController/Delete/5
-        public ActionResult Delete(int id)
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var user = await db.Users
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewData["ErrorMessage"] =
+                    "Delete failed. Try again, and if the problem persists " +
+                    "see your system administrator.";
+            }
+
+            return View(user);
         }
 
         // POST: UserController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
