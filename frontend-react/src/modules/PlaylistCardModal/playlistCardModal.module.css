@@ -1,0 +1,9 @@
+.testContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.contentContainer{
+    display: flex;
+    gap: 3vw;
+}

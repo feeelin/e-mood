@@ -52,6 +52,7 @@ export default function PlaylistBrowserModal(props: Props) {
                             </Button>
                         </Toolbar>
                     </AppBar>
+                    {props.content}
                 </Dialog>
         </React.Fragment>
     );

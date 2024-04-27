@@ -4,7 +4,6 @@ import classes from './TrackSlider.module.css'
 
 interface Props{
     duration: number;
-    currentDuration: number;
 }
 
 

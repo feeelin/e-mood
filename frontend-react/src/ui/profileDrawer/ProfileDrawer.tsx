@@ -13,18 +13,18 @@ interface Props {
 const ProfileDrawer = (props: Props) => {
     const DrawerList = (
         <Box sx={{ width: 250 }} role="presentation" onClick={props.toggleDrawer(false)}>
-            <ListItem key={'Войти'} disablePadding>
+            <ListItem disablePadding>
                 <ListItemButton>
                     <ListItemText primary={'Войти'} />
                 </ListItemButton>
             </ListItem>
             <Divider />
-            <ListItem key={'Панель управления'} disablePadding>
+            <ListItem disablePadding>
                 <ListItemButton>
                     <ListItemText primary={'Панель управления'} />
                 </ListItemButton>
             </ListItem>
-            <ListItem key={'Войти'} disablePadding>
+            <ListItem disablePadding>
                 <ListItemButton>
                     <ListItemText primary={'Выйти'} />
                 </ListItemButton>
