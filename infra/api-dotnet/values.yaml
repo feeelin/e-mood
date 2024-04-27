@@ -5,12 +5,13 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: registry.nakodeelee.ru/emood-dotnet
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "v1"
 
-imagePullSecrets: []
+imagePullSecrets:
+  - name: nakodeelee-reg-cred
 nameOverride: ""
 fullnameOverride: ""
 
@@ -38,23 +39,22 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80
+  port: 8080
 
 ingress:
-  enabled: false
-  className: ""
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  enabled: true
+  className: "nginx"
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod 
   hosts:
-    - host: chart-example.local
+    - host: mood.eureka-team.ru 
       paths:
-        - path: /
+        - path: /api
           pathType: ImplementationSpecific
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+  tls:
+    - secretName: mood-dotnet-tls
+      hosts:
+        - mood.eureka-team.ru
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
