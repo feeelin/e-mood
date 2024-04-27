@@ -1,47 +1,49 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace e_mood_asp_net_core.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class TrackController : Controller
     {
-        // GET: HomeController
-        public ActionResult Index()
+        private readonly MusicDbContext db;
+        public TrackController(MusicDbContext context)
         {
-            return View();
+            db = context;
         }
 
-        // GET: HomeController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: HomeController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: HomeController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> Details(int? id)
         {
-            try
+            if (id == null)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
+
+            var track = await db.Tracks
+                .Include(s => s.Name)
+                //.ThenInclude(e => e.Group)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (track == null)
             {
-                return View();
+                return NotFound();
             }
+
+            return View(track);
         }
 
-        // GET: HomeController/Edit/5
-        public ActionResult Edit(int id)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Track track)
         {
-            return View();
+            db.Tracks.Add(track);
+            await db.SaveChangesAsync();
+            return Ok();
         }
 
         // POST: HomeController/Edit/5
@@ -59,25 +61,31 @@ namespace e_mood_asp_net_core.Controllers
             }
         }
 
-        // GET: HomeController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: HomeController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)
         {
-            try
+            if (id == null)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
+
+            var track = await db.Tracks
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (track == null)
             {
-                return View();
+                return NotFound();
             }
+
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewData["ErrorMessage"] =
+                    "Delete failed. Try again, and if the problem persists " +
+                    "see your system administrator.";
+            }
+
+            return View(track);
         }
     }
 }

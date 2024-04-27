@@ -1,47 +1,50 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace e_mood_asp_net_core.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class GroupController : Controller
     {
-        // GET: GroupController
-        public ActionResult Index()
+        private readonly MusicDbContext db;
+        public GroupController(MusicDbContext context)
         {
-            return View();
+            db = context;
         }
 
-        // GET: GroupController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: GroupController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: GroupController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> Details(int? id)
         {
-            try
+            if (id == null)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
+
+            var group = await db.Groups
+                .Include(s => s.NameGroup)
+                //.ThenInclude(e => e.Group)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (group == null)
             {
-                return View();
+                return NotFound();
             }
+
+            return View(group);
         }
 
-        // GET: GroupController/Edit/5
-        public ActionResult Edit(int id)
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Group group)
         {
-            return View();
+            db.Groups.Add(group);
+            await db.SaveChangesAsync();
+            return Ok();
         }
 
         // POST: GroupController/Edit/5
@@ -59,25 +62,31 @@ namespace e_mood_asp_net_core.Controllers
             }
         }
 
-        // GET: GroupController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: GroupController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)
         {
-            try
+            if (id == null)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
+
+            var group = await db.Groups
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (group == null)
             {
-                return View();
+                return NotFound();
             }
+
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewData["ErrorMessage"] =
+                    "Delete failed. Try again, and if the problem persists " +
+                    "see your system administrator.";
+            }
+
+            return View(group);
         }
     }
 }

@@ -4,27 +4,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace e_mood_asp_net_core.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class UserController : Controller
     {
         private readonly MusicDbContext db;
         public UserController(MusicDbContext context) {
             db = context;
-        }    
-
-
-
-        // GET: UserController
-        public ActionResult Index()
-        {
-            return View();
         }
 
-        // GET: UserController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -32,37 +22,29 @@ namespace e_mood_asp_net_core.Controllers
                 return NotFound();
             }
 
-            var student = await db.Users
+            var user = await db.Users
                 .Include(s => s.Name)
                     //.ThenInclude(e => e.Surname)
                 .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.Id == id);
 
-            if (student == null)
+            if (user == null)
             {
                 return NotFound();
             }
 
-            return View(student);
+            return View(user);
         }
-
-
 
         // GET: UserController/Create
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(User user)
         {
             db.Users.Add(user);
             await db.SaveChangesAsync();
             return Ok();
-        }
-
-
-        // GET: UserController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
         }
 
         // POST: UserController/Edit/5
@@ -82,6 +64,7 @@ namespace e_mood_asp_net_core.Controllers
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)
         {
             if (id == null)
@@ -106,7 +89,5 @@ namespace e_mood_asp_net_core.Controllers
 
             return View(user);
         }
-
-        // POST: UserController/Delete/5
     }
 }

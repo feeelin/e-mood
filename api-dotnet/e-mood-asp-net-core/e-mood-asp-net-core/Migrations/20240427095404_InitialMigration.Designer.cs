@@ -3,13 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using e_mood_asp_net_core;
 
 #nullable disable
 
 namespace e_mood_asp_net_core.Migrations
 {
-    [DbContext(typeof(MusicContext))]
-    [Migration("20240427071625_InitialMigration")]
+    [DbContext(typeof(MusicDbContext))]
+    [Migration("20240427095404_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />

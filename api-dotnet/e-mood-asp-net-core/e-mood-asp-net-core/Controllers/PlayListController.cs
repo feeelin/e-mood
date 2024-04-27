@@ -1,47 +1,46 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace e_mood_asp_net_core.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class PlayListController : Controller
     {
-        // GET: PlayListController
-        public ActionResult Index()
+        private readonly MusicDbContext db;
+        public PlayListController(MusicDbContext context)
         {
-            return View();
+            db = context;
         }
 
-        // GET: PlayListController/Details/5
-        public ActionResult Details(int id)
+        public async Task<IActionResult> Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var playList = await db.PlayLists
+                .Include(s => s.Name)
+                    //.ThenInclude(e => e.Group)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (playList == null)
+            {
+                return NotFound();
+            }
+
+            return View(playList);
         }
 
-        // GET: PlayListController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: PlayListController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> Create(PlayList playList)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: PlayListController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
+            db.PlayLists.Add(playList);
+            await db.SaveChangesAsync();
+            return Ok();
         }
 
         // POST: PlayListController/Edit/5
@@ -59,25 +58,31 @@ namespace e_mood_asp_net_core.Controllers
             }
         }
 
-        // GET: PlayListController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: PlayListController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)
         {
-            try
+            if (id == null)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
+
+            var playList = await db.PlayLists
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (playList == null)
             {
-                return View();
+                return NotFound();
             }
+
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewData["ErrorMessage"] =
+                    "Delete failed. Try again, and if the problem persists " +
+                    "see your system administrator.";
+            }
+
+            return View(playList);
         }
     }
 }

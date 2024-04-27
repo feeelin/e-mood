@@ -1,3 +1,4 @@
+using e_mood_asp_net_core;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext <MusicContext> (option =>
+builder.Services.AddDbContext<MusicDbContext>(option =>
     option.UseSqlite("Data Source=mood.db"));
 
 var app = builder.Build();
