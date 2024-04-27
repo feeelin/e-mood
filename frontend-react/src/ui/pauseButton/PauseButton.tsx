@@ -7,15 +7,15 @@ interface Props{
     setIsPlaying: (bool: boolean) => void;
 }
 
-const PlayButton = (props: Props) => {
+const PauseButton = (props: Props) => {
     return (
         <Fab onClick={
             // @ts-ignore
-            (event) => props.setIsPlaying(true)
+            (event) => props.setIsPlaying(false)
         } aria-label={'play'} sx={{width: '12vh', height: '12vh'}}>
-            <Icon fontSize={'large'}>play_arrow</Icon>
+            <Icon fontSize={'large'}>pause</Icon>
         </Fab>
     );
 };
 
-export default PlayButton;
+export default PauseButton;
