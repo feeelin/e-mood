@@ -1,11 +1,12 @@
 import './App.css'
-import Button from '@mui/material/Button'
+import ModeSelection from "./components/modeSelection/ModeSelection.tsx";
+
 
 function App() {
   return (
-    <>
-      <Button>Something</Button>
-    </>
+    <div className={'app'}>
+      <ModeSelection playlist_title={'Rock Classic'}/>
+    </div>
   )
 }
 
