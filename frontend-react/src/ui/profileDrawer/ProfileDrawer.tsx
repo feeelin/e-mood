@@ -8,23 +8,24 @@ interface Props {
     open: boolean,
     setOpen: (open: boolean) => void,
     toggleDrawer: (open: boolean) => any,
+    authAction: () => void
 }
 
 const ProfileDrawer = (props: Props) => {
     const DrawerList = (
         <Box sx={{ width: 250 }} role="presentation" onClick={props.toggleDrawer(false)}>
-            <ListItem disablePadding>
-                <ListItemButton>
+            <ListItem key={'Войти'} disablePadding>
+                <ListItemButton onClick={(e) => props.authAction()}>
                     <ListItemText primary={'Войти'} />
                 </ListItemButton>
             </ListItem>
             <Divider />
-            <ListItem disablePadding>
+            <ListItem key={'Панель управления'} disablePadding>
                 <ListItemButton>
                     <ListItemText primary={'Панель управления'} />
                 </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
+            <ListItem key={'Войти'} disablePadding>
                 <ListItemButton>
                     <ListItemText primary={'Выйти'} />
                 </ListItemButton>

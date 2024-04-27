@@ -1,9 +1,6 @@
+transformers
+scipy
 flask
-flask-SQLAlchemy
-diffusers
-IPython.display
-torch
-gradio
 scipy
 numpy
 wave
