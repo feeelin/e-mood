@@ -1,5 +1,6 @@
 using e_mood_dotnet.Context;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -38,6 +39,12 @@ app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "Music API V1");
     c.RoutePrefix = "api/swagger";
+});
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "storage", "tracks")),
+    RequestPath = "/api/Files/Content"
 });
 
 app.MapControllers();

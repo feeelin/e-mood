@@ -35,8 +35,8 @@ public class FilesController : ControllerBase
         return Ok(new { files });
     }
 
-    [HttpGet("GetFile")]
-    public async Task<IActionResult> GetFile(Guid id)
+    [HttpGet("GetFile/{id}")]
+    public async Task<IActionResult> GetFile([FromRoute] Guid id)
     {
         var filePath = Path.Combine(Directory.GetCurrentDirectory(), "storage", "tracks", $"{id}.mp3");
         FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
@@ -44,6 +44,19 @@ public class FilesController : ControllerBase
         if(stream == null)
             return NotFound();
 
-        return File(stream, "application/octet-stream", $"{id}.mp3"); // returns a FileStreamResult
+        return File(stream, "audio/mpeg", $"{id}.mp3");
+
+    }
+
+    [HttpGet("GetFile/{id}.mp3")]
+    public async Task<IActionResult> GetMp3File([FromRoute] Guid id)
+    {
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "storage", "tracks", $"{id}.mp3");
+        FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+
+        if(stream == null)
+            return NotFound();
+
+        return File(stream, "audio/mpeg", $"{id}.mp3");
     }
 }
