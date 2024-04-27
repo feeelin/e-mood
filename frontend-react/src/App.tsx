@@ -1,6 +1,7 @@
 import './App.css'
-import ModeSelection from "./components/modeSelection/ModeSelection.tsx";
 import Header from "./components/header/header.tsx";
+import Player from "./components/player/Player.tsx";
+import PlayerControl from "./components/playerControl/playerControl.tsx";
 
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
     <div className={'app'}>
         <Header/>
         <div className={'contentContainer'}>
-            <ModeSelection playlistTitle={'Rock Classic'}/>
+            <PlayerControl/>
+            <Player/>
         </div>
     </div>
   )

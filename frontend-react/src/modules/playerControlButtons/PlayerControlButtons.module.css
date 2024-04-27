@@ -1,4 +1,7 @@
 .container{
     display: flex;
     justify-content: center;
+    gap: 3vw;
+    align-items: center;
+    padding: 10vh 0;
 }

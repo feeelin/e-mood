@@ -1,7 +1,7 @@
 import IconWithSubtitle from "../../ui/iconWithSubtitle/IconWithSubtitle.tsx";
 import classes from './modeSelection.module.css'
 import {useEffect, useState} from "react";
-import PlaylistSelectionButton from "../../modules/playlistSelectionButton/PlaylistSelectionButton.tsx";
+import PlaylistSelectionButton from "../playlistSelectionButton/PlaylistSelectionButton.tsx";
 
 interface Props{
     playlistTitle: string,
