@@ -1,4 +1,3 @@
-using System.Security.Claims;
 using e_mood_dotnet.Context;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -37,6 +36,17 @@ public class UserController : ControllerBase
     public async Task<IActionResult> GetUser(Guid id)
     {
         var user = await _context.Users.ToListAsync();
+        return Ok(user);
+    }
+    
+    [ProducesResponseType(typeof(User), StatusCodes.Status200OK)]
+    [HttpPost("AddFavouritePlaylist")]
+    public async Task<IActionResult> AddFavouritePlaylist(Guid userId, Guid playlistId)
+    {
+        var user = await _context.Users.FirstAsync(item => item.Id == userId);
+        var playlist = await _context.Playlists.FirstAsync(item => item.Id == playlistId);
+        playlist.Subscribers.Add(user);
+        await _context.SaveChangesAsync();
         return Ok(user);
     }
 

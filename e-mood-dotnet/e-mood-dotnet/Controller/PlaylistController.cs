@@ -43,4 +43,12 @@ public class PlaylistController : ControllerBase
             .ToListAsync();
         return Ok(playlist);
     }
+    
+    [ProducesResponseType(typeof(Playlist), StatusCodes.Status200OK)]
+    [HttpPost("CreatePlaylist")]
+    public async Task<IActionResult> CreatePlaylist(Playlist playlist)
+    {
+        await _context.Playlists.AddAsync(playlist);
+        return Ok(playlist);
+    }
 }

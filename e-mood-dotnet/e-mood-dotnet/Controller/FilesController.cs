@@ -47,16 +47,4 @@ public class FilesController : ControllerBase
         return File(stream, "audio/mpeg", $"{id}.mp3");
 
     }
-
-    [HttpGet("GetFile/{id}.mp3")]
-    public async Task<IActionResult> GetMp3File([FromRoute] Guid id)
-    {
-        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "storage", "tracks", $"{id}.mp3");
-        FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-
-        if(stream == null)
-            return NotFound();
-
-        return File(stream, "audio/mpeg", $"{id}.mp3");
-    }
 }

@@ -38,5 +38,17 @@ public class TrackController : ControllerBase
         var track = await _context.Tracks.ToListAsync();
         return Ok(track);
     }
+    
+    [ProducesResponseType(typeof(Track), StatusCodes.Status200OK)]
+    [HttpPost("AddTrack")]
+    public async Task<IActionResult> GetTrack(Guid playlistId, [FromBody] Track track)
+    {
+        var playlist = await _context.Playlists
+            .Include(pl => pl.Tracks)
+            .FirstOrDefaultAsync(item => item.Id == playlistId);
+        playlist?.Tracks.Add(track);
+        await _context.SaveChangesAsync();
+        return Ok(track);
+    }
 
 }
