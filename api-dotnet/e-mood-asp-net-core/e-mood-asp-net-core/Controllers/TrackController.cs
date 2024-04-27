@@ -1,11 +1,16 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+=======
+﻿using Microsoft.AspNetCore.Mvc;
+>>>>>>> 057a41ceaa65494bbbe10ae3a953b778c2afec4e
 
 namespace e_mood_asp_net_core.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+<<<<<<< HEAD
     public class TrackController : Controller
     {
         private readonly MusicDbContext db;
@@ -44,15 +49,48 @@ namespace e_mood_asp_net_core.Controllers
             db.Tracks.Add(track);
             await db.SaveChangesAsync();
             return Ok();
+=======
+    public class TrackController : ControllerBase
+    {
+        private readonly ILogger<TrackController> _logger;
+        private readonly MusicDbContext _context;
+
+        public TrackController(
+            MusicDbContext context,
+            ILogger<TrackController> logger)
+        {
+            _context = context;
+            _logger = logger;
         }
 
-        // POST: HomeController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        [HttpGet("get-track")]
+        public async Task<Track> GetTrack()
         {
-            try
+            return new Track()
             {
+                Name = "Test track"
+            };
+        }
+        
+        [HttpGet("list-tracks")]
+        public async Task<IEnumerable<Track>> ListTracks()
+        {
+            return Enumerable.Range(1, 5).Select(index => new Track()
+                {
+                    Id = index,
+                    Name = index.ToString()
+                })
+                .ToArray();
+>>>>>>> 057a41ceaa65494bbbe10ae3a953b778c2afec4e
+        }
+        
+        
+        [HttpPost("create-track")]
+        public async Task<Track> CreateTrack()
+        {
+            var track = new Track()
+            {
+<<<<<<< HEAD
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -86,6 +124,14 @@ namespace e_mood_asp_net_core.Controllers
             }
 
             return View(track);
+=======
+                Id = 1,
+                Name = "test playlist"
+            };
+            _context.Tracks.Add(track);
+            await _context.SaveChangesAsync();
+            return track;
+>>>>>>> 057a41ceaa65494bbbe10ae3a953b778c2afec4e
         }
     }
 }

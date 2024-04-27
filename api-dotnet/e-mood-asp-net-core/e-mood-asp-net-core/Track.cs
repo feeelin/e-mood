@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Reflection.Metadata;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace e_mood_asp_net_core
 {
     public class Track
     {
-        [Key] public int Id { get; set; }
+        [Key] 
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Genre { get; set; }
         public string Executor { get; set; }

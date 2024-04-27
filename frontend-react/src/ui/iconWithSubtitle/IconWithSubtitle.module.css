@@ -55,6 +55,7 @@
 .firstSlide {
     display: inline-block;
     animation-name: slide-then-hide;
+    animation-delay: 3s;
     animation-duration: var(--duration);
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -62,28 +63,6 @@
     animation-fill-mode: backwards;
 }
 
-.words {
-    font-size: 100px;
-    margin: 0 auto;
-    white-space: nowrap;
-    overflow: hidden;
-    position: absolute;
-}
-
-.words span {
-    display: inline-block;
-    padding-left: 100%;
-    animation-name: slide;
-    animation-duration: var(--duration-double);
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    color: red;
-}
-
-.words--second span {
-    animation-delay: var(--duration);
-    color: blue;
-}
 
 @keyframes slide-then-hide {
     0% {

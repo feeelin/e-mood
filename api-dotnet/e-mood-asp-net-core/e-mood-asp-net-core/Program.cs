@@ -22,8 +22,16 @@ app.UseSwaggerUI(c =>
     c.RoutePrefix = "api/swagger";
 });
 
-app.UseAuthorization();
-
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<MusicDbContext>();
+    if (context != null)
+    {
+        if (context.Database.GetPendingMigrations().Any())
+            context.Database.Migrate();
+    }
+}
 
 app.Run();
