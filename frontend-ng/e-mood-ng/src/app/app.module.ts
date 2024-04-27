@@ -15,12 +15,18 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MoodTrackTableComponent } from './mood-track-table/mood-track-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoodNavigationComponent,
-    MoodDashboardComponent
+    MoodDashboardComponent,
+    MoodTrackTableComponent
   ],
   imports: [
     MatSlideToggleModule,
@@ -33,7 +39,11 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    FlexLayoutModule
   ],
   providers: [
     provideAnimationsAsync()
