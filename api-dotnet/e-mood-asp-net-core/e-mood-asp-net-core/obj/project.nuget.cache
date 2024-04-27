@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "S0mkrmxq13QvPSig2OYaMRqLx8f7sYg5tyq6pqOfGTFm9zLpuRJQLqe82k1RDCWVqTQ6wPwZwS+AnPOKREczuQ==",
+  "dgSpecHash": "fRgEVuf9gXFF5krO7NReng7D4emgFsN7JNOy8Did0tNrMlOU/VCb3RJmvJ5GZ/f1if8hVz54oEIywZ2wqrKcxQ==",
   "success": true,
   "projectFilePath": "C:\\e-mood\\api-dotnet\\e-mood-asp-net-core\\e-mood-asp-net-core\\e-mood-asp-net-core.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,7 @@
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.4\\microsoft.entityframeworkcore.relational.8.0.4.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\8.0.4\\microsoft.entityframeworkcore.sqlite.8.0.4.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\8.0.4\\microsoft.entityframeworkcore.sqlite.core.8.0.4.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.4\\microsoft.entityframeworkcore.tools.8.0.4.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.0\\microsoft.extensions.caching.memory.8.0.0.nupkg.sha512",
