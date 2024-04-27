@@ -1,7 +1,8 @@
 # syntax=docker/dockerfile:1.4
-FROM --platform=$BUILDPLATFORM python:3.10-alpine AS builder
+FROM pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime AS builder
 
 WORKDIR /app
+
 
 COPY requirements.txt /app
 RUN --mount=type=cache,target=/root/.cache/pip \
