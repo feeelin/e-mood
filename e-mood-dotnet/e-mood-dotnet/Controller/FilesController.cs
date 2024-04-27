@@ -19,13 +19,13 @@ public class FilesController : ControllerBase
     }
 
     [HttpPost("UploadFile")]
-    public async Task<IActionResult> OnPostUploadAsync(IFormFile files)
+    public async Task<IActionResult> OnPostUploadAsync(IFormFile files, Guid trackId)
     {
         _logger.LogWarning("got a new file");
         if (files != null)
         {
             Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "storage", "tracks"));
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "storage", "tracks");
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "storage", "tracks", $"{trackId}.mp3");
             using (var stream = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
             {
                 await files.CopyToAsync(stream);
@@ -36,9 +36,9 @@ public class FilesController : ControllerBase
     }
 
     [HttpGet("GetFile")]
-    public async Task<IActionResult> GetFile()
+    public async Task<IActionResult> GetFile(Guid id)
     {
-        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "storage", "tracks", "1.mp3");
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "storage", "tracks", $"{id}.mp3");
         FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
 
         if(stream == null)
