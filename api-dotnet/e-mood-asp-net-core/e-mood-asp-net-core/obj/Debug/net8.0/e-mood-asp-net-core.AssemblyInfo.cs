@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("e-mood-asp-net-core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2ca3afcb779f50b92cbd16cd67db9e598e2f4fd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6dbab00c415a6bac96ce17d65d8de482f7a06551")]
 [assembly: System.Reflection.AssemblyProductAttribute("e-mood-asp-net-core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("e-mood-asp-net-core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

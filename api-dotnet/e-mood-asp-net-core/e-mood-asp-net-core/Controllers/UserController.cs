@@ -5,6 +5,13 @@ namespace e_mood_asp_net_core.Controllers
 {
     public class UserController : Controller
     {
+        private readonly MusicDbContext db;
+        public UserController(MusicDbContext context) {
+            db = context;
+        }    
+
+
+
         // GET: UserController
         public ActionResult Index()
         {
@@ -18,25 +25,15 @@ namespace e_mood_asp_net_core.Controllers
         }
 
         // GET: UserController/Create
-        public ActionResult Create()
+
+        [HttpPost]
+        public async Task<IActionResult> Create(User user)
         {
-            return View();
+            db.Users.Add(user);
+            await db.SaveChangesAsync();
+            return Ok();
         }
 
-        // POST: UserController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
         // GET: UserController/Edit/5
         public ActionResult Edit(int id)
