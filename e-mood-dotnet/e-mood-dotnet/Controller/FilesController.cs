@@ -24,6 +24,9 @@ public class FilesController : ControllerBase
         _logger.LogWarning("got a new file");
         if (files != null)
         {
+            if (!files.Name.Contains(".mp3"))
+                return Forbid();
+            
             Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "storage", "tracks"));
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), "storage", "tracks", $"{trackId}.mp3");
             using (var stream = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
