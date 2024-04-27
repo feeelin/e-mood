@@ -6,6 +6,6 @@ public class Playlist
     public string Name { get; set; }
     public string Description { get; set; }
     public Guid OwnerId { get; set; }
-    public List<Guid> Subscribers { get; set; }
+    public List<User> Subscribers { get; set; }
     public string CoverUrl { get; set; }
 }
