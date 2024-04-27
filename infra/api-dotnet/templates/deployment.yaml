@@ -45,8 +45,15 @@ spec:
             httpGet:
               path: /
               port: http
+          volumeMounts:
+            - name: api-storage
+              mountPath: /app/storage
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: api-storage
+          persistentVolumeClaim:
+            claimName: database-storage
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

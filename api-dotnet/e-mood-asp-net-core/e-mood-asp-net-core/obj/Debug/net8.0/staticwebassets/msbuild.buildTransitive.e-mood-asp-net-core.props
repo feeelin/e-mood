@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\e-mood-asp-net-core.props" />
-</Project>
