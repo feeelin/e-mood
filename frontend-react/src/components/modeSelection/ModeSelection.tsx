@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import PlaylistSelectionButton from "../../modules/playlistSelectionButton/PlaylistSelectionButton.tsx";
 
 interface Props{
-    playlist_title: string,
+    playlistTitle: string,
 }
 
 type ButtonDescription = 'Сейчас играет' | 'Выключено'
@@ -39,7 +39,7 @@ const ModeSelection = (props: Props) => {
     return (
         <div className={classes.container}>
             <PlaylistSelectionButton
-                playlistTitle={'Rock Classic'}
+                playlistTitle={props.playlistTitle}
                 playlistDescription={playlistDescription}
                 playlistActive={playlistActive}
                 setActive={setPlaylistActive}

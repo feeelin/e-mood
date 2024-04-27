@@ -8,7 +8,7 @@ function App() {
     <div className={'app'}>
         <Header/>
         <div className={'contentContainer'}>
-            <ModeSelection playlist_title={'Rock Classic'}/>
+            <ModeSelection playlistTitle={'Rock Classic'}/>
         </div>
     </div>
   )
