@@ -118,6 +118,7 @@ public class GeneratorController : ControllerBase
             },
             OwnerId = Guid.NewGuid()
         });
+        
         _context.Playlists.Add(new Playlist()
         {
             Name = "Igor",
@@ -130,6 +131,37 @@ public class GeneratorController : ControllerBase
                     Name = "Igor",
                     Surname = "Evseev",
                     PictureUrl = "https://cdn.eureka-team.ru/avatar/hacker.png"
+                }
+            },
+            Tracks = new List<Track>()
+            {
+                new Track()
+                {
+                    Title = "Wait For Me",
+                    Artist = "Jeff The second",
+                    Duration = TimeSpan.FromSeconds(120),
+                    Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
+                    Playlist = new Playlist()
+                    {
+                        Name = "Igor",
+                        Description = "Evseev",
+                        CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
+                        OwnerId = Guid.NewGuid()
+                    }
+                },
+                new Track()
+                {
+                    Title = "Wait For Me",
+                    Artist = "Jeff The second",
+                    Duration = TimeSpan.FromSeconds(120),
+                    Url = "https://cdn.eureka-team.ru/avatar/hacker.png",
+                    Playlist = new Playlist()
+                    {
+                        Name = "Igor",
+                        Description = "Evseev",
+                        CoverUrl = "https://cdn.eureka-team.ru/avatar/hacker.png",
+                        OwnerId = Guid.NewGuid()
+                    }
                 }
             },
             OwnerId = Guid.NewGuid()
