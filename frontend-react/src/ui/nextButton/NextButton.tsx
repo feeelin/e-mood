@@ -6,7 +6,7 @@ import Fab from "@mui/material/Fab";
 const NextButton = () => {
     return (
         <Fab sx={{width: '8vh', height: '8vh'}}>
-            <Icon size={'large'}>skip_next</Icon>
+            <Icon fontSize={'large'}>skip_next</Icon>
         </Fab>
     );
 };
