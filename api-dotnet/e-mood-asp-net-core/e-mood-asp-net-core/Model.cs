@@ -4,22 +4,29 @@
     {
     }
 }*/
+using e_mood_asp_net_core;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 
-public class BloggingContext : DbContext
+public class MusicContext : DbContext
 {
-    public DbSet<Blog> Blogs { get; set; }
-    public DbSet<Post> Posts { get; set; }
+    public DbSet<Group> Groups { get; set; }
+    public DbSet<PlayList> PlayLists { get; set; }
+    public DbSet<Track> Tracks { get; set; }
+    public DbSet<User> Users { get; set; }
+
+
+   /* public DbSet<Blog> Blogs { get; set; }
+    public DbSet<Post> Posts { get; set; }*/
 
     public string DbPath { get; }
 
-    public BloggingContext()
+    public MusicContext()
     {
         var folder = Environment.SpecialFolder.LocalApplicationData;
         var path = Environment.GetFolderPath(folder);
-        DbPath = System.IO.Path.Join(path, "blogging.db");
+        DbPath = System.IO.Path.Join(path, "music.db");
     }
 
     // The following configures EF to create a Sqlite database file in the
@@ -28,7 +35,8 @@ public class BloggingContext : DbContext
         => options.UseSqlite($"Data Source={DbPath}");
 }
 
-public class Blog
+
+/*public class Blog
 {
     public int BlogId { get; set; }
     public string Url { get; set; }
@@ -44,4 +52,4 @@ public class Post
 
     public int BlogId { get; set; }
     public Blog Blog { get; set; }
-}
+}*/
