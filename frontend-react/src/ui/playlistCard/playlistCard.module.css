@@ -1,18 +1,37 @@
 .avatar{
-    width: 5vw;
-    height: 5vw;
+    width: 7vw;
+    height: 7vw;
     box-shadow: 2px 2px 10px #282828;
+    margin: 2vh;
 }
 
 .container{
+    margin: 2vw;
     width: 40%;
-    border: 3px solid white;
+    height: 100%;
     border-radius: 30px;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     padding: 1vh 1vw;
     gap: 10vw;
     cursor: pointer;
+    background: linear-gradient(-45deg, #ed193b, #a98055, #f286e2, #681d7a);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .textContainer{

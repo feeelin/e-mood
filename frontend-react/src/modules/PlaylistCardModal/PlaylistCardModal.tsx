@@ -15,6 +15,10 @@ export default function PlaylistCardModal(props: Props) {
     return (
         <Modal open={props.open}>
             <div className={classes.container}>
+                <div className={classes.closeBtn}>
+                    <Button color="secondary" onClick={(event) => props.close()} variant='contained' >Закрыть</Button>
+                </div>
+
                 <div className={classes.contentContainer}>
                     <Avatar src={props.playlist?.coverUrl}/>
                     <div className={classes.textContainer}>
@@ -22,15 +26,14 @@ export default function PlaylistCardModal(props: Props) {
                         <Typography variant={'body2'} component={'p'}>{props.playlist?.description}</Typography>
                     </div>
                 </div>
-                <div>
-                    <ol>
-                        {props.playlist?.tracks?.map((track, index) => <Typography variant={'body1'} component={'p'}>{index + 1}. {track.title} - {track.artist}</Typography>)}
+                <div className={classes.songsList}>
+
+                    <ol >
+                        {props.playlist?.tracks?.map((track, index) => <Typography className={classes.song} variant={'body1'} component={'p'}>{index + 1}. {track.title} - {track.artist}</Typography>)}
                     </ol>
                 </div>
                 <div>
-                    <Button variant="contained" color="success">Добавить</Button>
-                    {/*@ts-ignore*/}
-                    <Button onClick={(event) => props.close()} variant='contained' color={'error'}>Закрыть</Button>
+                    <Button variant="contained" color="inherit">Добавить</Button>
                 </div>
             </div>
         </Modal>

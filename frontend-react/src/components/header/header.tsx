@@ -5,6 +5,7 @@ import ProfileMenuWIthActions from "../../modules/profileMenuWithActions/Profile
 import PlaylistBrowserMenu from "../../modules/playlistBrowserMenu/PlaylistBrowserMenu.tsx";
 import PlaylistsList from "../playlistsList/PlaylistsList.tsx";
 import FileUpload from "../FileUpload/FileUpload.tsx";
+import React from "react";
 
 const Header = () => {
     return (
@@ -12,7 +13,10 @@ const Header = () => {
             <Logo/>
             <div className={classes.headerButtonsContainer}>
                 <PlaylistBrowserMenu content={
-                    <PlaylistsList/>
+                    <div>
+                        <PlaylistsList/>
+                    </div>
+
                 }/>
                 <ProfileMenuWIthActions/>
             </div>

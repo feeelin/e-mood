@@ -46,12 +46,6 @@ const ProfileDrawer = (props: Props) => {
 
                                 </ListItemButton>
                             </ListItem>
-                            <ListItem>
-                                <ListItemButton>
-                                    <FileUpload/>
-                                </ListItemButton>
-
-                            </ListItem>
                         </div>
 
 

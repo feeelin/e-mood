@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
+import FileUpload from "../../components/FileUpload/FileUpload.tsx";
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -45,8 +46,11 @@ export default function PlaylistBrowserModal(props: Props) {
                             >
                             </IconButton>
                             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-                                Поиск плейлистов
+                                Обзор плейлистов
                             </Typography>
+
+                            <FileUpload/>
+
                             <Button autoFocus color="inherit" onClick={props.handleClose}>
                                 Закрыть
                             </Button>

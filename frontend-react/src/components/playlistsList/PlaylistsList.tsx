@@ -3,6 +3,7 @@ import {useState} from "react";
 import {IPlaylist} from "../../api/api.client.ts";
 import PlaylistCardModal from "../../modules/PlaylistCardModal/PlaylistCardModal.tsx";
 import * as React from "react";
+import FileUpload from "../FileUpload/FileUpload.tsx";
 
 const PlaylistsList = () => {
 
@@ -20,6 +21,7 @@ const PlaylistsList = () => {
 
     return (
         <div>
+
             <PlaylistCardModal
                 playlist={currentCard}
                 open={open}
