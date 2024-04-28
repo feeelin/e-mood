@@ -14,6 +14,7 @@ interface Props {
 
 const ProfileDrawer = (props: Props) => {
 
+    // @ts-ignore
     const { keycloak, initialized } = useKeycloak();
 
     return (

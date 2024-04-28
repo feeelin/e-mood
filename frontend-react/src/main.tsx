@@ -16,8 +16,8 @@ const keycloakProviderInitConfig: KeycloakInitOptions = {
 };
 
 const initOptions: KeycloakConfig = {
-    clientId: "tulahack-realm",
-    realm: 'tulahack-realm',
+    clientId: "tulahack-client",
+    realm: 'tulahack',
     url: "https://keycloak.eureka-team.ru",
 };
 

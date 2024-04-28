@@ -1,5 +1,5 @@
 // @ts-ignore
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import ProfileIconButton from "../../ui/profileIconButton/ProfileIconButton.tsx";
 import ProfileDrawer from "../../ui/profileDrawer/ProfileDrawer.tsx";
 import { useKeycloak } from '@react-keycloak/web';
@@ -9,7 +9,12 @@ import { useKeycloak } from '@react-keycloak/web';
 const ProfileMenuWIthActions = () => {
     const [open, setOpen] = useState(false);
 
+    // @ts-ignore
     const { keycloak, initialized } = useKeycloak();
+
+    useEffect(() => {
+        console.log(keycloak.userInfo)
+    }, [keycloak.authenticated]);
 
 
     const toLogin = () => {

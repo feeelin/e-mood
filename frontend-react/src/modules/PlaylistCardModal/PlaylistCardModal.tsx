@@ -29,6 +29,7 @@ export default function PlaylistCardModal(props: Props) {
                 </div>
                 <div>
                     <Button variant="contained" color="success">Добавить</Button>
+                    {/*@ts-ignore*/}
                     <Button onClick={(event) => props.close()} variant='contained' color={'error'}>Закрыть</Button>
                 </div>
             </div>
