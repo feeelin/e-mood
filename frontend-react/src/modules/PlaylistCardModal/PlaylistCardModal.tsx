@@ -8,12 +8,13 @@ import Button from "@mui/material/Button";
 interface Props {
     playlist?: IPlaylist;
     open: boolean;
+    close: () => void;
 }
 
 export default function PlaylistCardModal(props: Props) {
     return (
         <Modal open={props.open}>
-            <div>
+            <div className={classes.container}>
                 <div className={classes.contentContainer}>
                     <Avatar src={props.playlist?.coverUrl}/>
                     <div className={classes.textContainer}>
@@ -22,7 +23,13 @@ export default function PlaylistCardModal(props: Props) {
                     </div>
                 </div>
                 <div>
+                    <ol>
+                        {props.playlist?.tracks?.map((track, index) => <Typography variant={'body1'} component={'p'}>{index + 1}. {track.title} - {track.artist}</Typography>)}
+                    </ol>
+                </div>
+                <div>
                     <Button variant="contained" color="success">Добавить</Button>
+                    <Button onClick={(event) => props.close()} variant='contained' color={'error'}>Закрыть</Button>
                 </div>
             </div>
         </Modal>

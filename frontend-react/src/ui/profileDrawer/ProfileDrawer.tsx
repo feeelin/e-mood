@@ -2,6 +2,7 @@
 import React from 'react';
 import {Box, Drawer, ListItem, ListItemButton, ListItemText} from "@mui/material";
 import Divider from "@mui/material/Divider";
+import {useKeycloak} from "@react-keycloak/web";
 
 
 interface Props {
@@ -12,30 +13,38 @@ interface Props {
 }
 
 const ProfileDrawer = (props: Props) => {
-    const DrawerList = (
-        <Box sx={{ width: 250 }} role="presentation" onClick={props.toggleDrawer(false)}>
-            <ListItem key={'Войти'} disablePadding>
-                <ListItemButton onClick={(e) => props.authAction()}>
-                    <ListItemText primary={'Войти'} />
-                </ListItemButton>
-            </ListItem>
-            <Divider />
-            <ListItem key={'Панель управления'} disablePadding>
-                <ListItemButton>
-                    <ListItemText primary={'Панель управления'} />
-                </ListItemButton>
-            </ListItem>
-            <ListItem key={'Войти'} disablePadding>
-                <ListItemButton>
-                    <ListItemText primary={'Выйти'} />
-                </ListItemButton>
-            </ListItem>
-        </Box>
-    );
+
+    const { keycloak, initialized } = useKeycloak();
 
     return (
         <Drawer anchor={'right'} open={props.open} onClose={props.toggleDrawer(false)}>
-            {DrawerList}
+            <Box sx={{ width: 250 }} role="presentation" onClick={props.toggleDrawer(false)}>
+                {
+                    keycloak.authenticated ?
+                        <div>
+                            <ListItem disablePadding>
+                                <ListItemButton>
+                                    <ListItemText primary={'Управление плейлистами'} />
+                                </ListItemButton>
+                            </ListItem>
+                            <ListItem disablePadding>
+                                <ListItemButton>
+                                    <ListItemText primary={'Выйти'} />
+                                </ListItemButton>
+                            </ListItem>
+                        </div>
+                        :
+                        <ListItem disablePadding>
+                            <ListItemButton onClick={(event) => {
+                                props.authAction()
+                                console.log(event)
+                            }}>
+                                <ListItemText primary={'Войти'} />
+                            </ListItemButton>
+                        </ListItem>
+                }
+                <Divider />
+            </Box>
         </Drawer>
     );
 };

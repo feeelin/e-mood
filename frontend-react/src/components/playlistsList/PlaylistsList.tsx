@@ -23,9 +23,9 @@ const PlaylistsList = () => {
             <PlaylistCardModal
                 playlist={currentCard}
                 open={open}
-
+                close={handleDrawerClose}
             />
-            <PlaylistsCards onCardsClick={handleDrawerToggle}/>
+            <PlaylistsCards onCardsClick={handleDrawerToggle} />
         </div>
     );
 };

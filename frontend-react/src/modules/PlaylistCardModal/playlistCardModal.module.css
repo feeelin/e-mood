@@ -7,3 +7,16 @@
     display: flex;
     gap: 3vw;
 }
+
+.container{
+    padding: 1vh 1vw;
+    background-color: #1a1a1a;
+    opacity: 80%;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 50vh;
+    margin: auto auto;
+    overflow: auto;
+    border-radius: 30px;
+}

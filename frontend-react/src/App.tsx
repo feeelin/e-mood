@@ -8,17 +8,14 @@ import useSound from "use-sound";
 
 
 function App() {
-    const currentTrack = 'https://mood.eureka-team.ru/api/Files/Content/3ca496ac-ce63-4350-9ee2-29eb4d3c0fe1.mp3'
+    const currentTrack = 'https://mood.eureka-team.ru/api/Files/Content/Gorky_Park_-_Moscow_Calling.mp3'
     // @ts-ignore
     const [currentDuration, setCurrentDuration] = useState(0);
 
     const [isPlaying, setIsPlaying] = useState(false);
+    // @ts-ignore
     const [play, { pause, duration, sound }] = useSound(currentTrack);
 
-
-    useEffect(() => {
-        console.log(sound)
-    }, [sound]);
 
     useEffect(() => {
         if(isPlaying){

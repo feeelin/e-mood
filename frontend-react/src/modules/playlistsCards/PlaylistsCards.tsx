@@ -23,7 +23,7 @@ const PlaylistsCards = (props: Props) => {
     return (
         <div>
             {cardsContent.map(
-                    card => <PlaylistCard key={card.id} name={card.name} description={card.description} coverUrl={card.coverUrl} click={(event) => props.onCardsClick(card)}/>
+                    card => <PlaylistCard key={card.id} card={card} click={props.onCardsClick}/>
                 )
             }
         </div>
