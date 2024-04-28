@@ -1,37 +1,38 @@
-from flask import Flask, send_file
-from transformers import pipeline, AutoProcessor, AutoModel
-import scipy
+from transformers import AutoProcessor, AutoModel, MusicgenForConditionalGeneration
 
 app = Flask(__name__)
 
 @app.route('/player/get-track')
 def get_track():
-    synthesiser = pipeline("text-to-speech", "suno/bark-small")
-    lyrics = """♪ I love JavaScript so much, ♪
-                ♪ It makes me feel like a pro, ♪
-                ♪ I can create anything, ♪ 
-                ♪ With just a few lines of code, ♪ 
-                ♪ I'll never get bored, ♪
-                ♪ With so many things to do, ♪
-                ♪ I'll always be learning, ♪
-                ♪ And that's why JavaScript's true, ♪
-                ♪ JavaScript makes me feel alive, ♪
-                ♪ It gives me power over all other languages, ♪
-                ♪ It helps me conquer any problem, ♪
-                ♪ And makes me feel like a boss, ♪
-                ♪ JavaScript makes me feel like a superhero, ♪
-                ♪ It makes me feel like nothing else matters, ♪
-                ♪ Because JavaScript gives me super powers, ♪
-                ♪ To do anything that I want, ♪
-                ♪ So if you're looking for inspiration, ♪
-                ♪ Or just want some good vibes, ♪
-                ♪ Look no further than JavaScript, ♪
-                ♪ Because it's what makes me feel alive! ♪"""
-    speech = synthesiser(lyrics, forward_params={"do_sample": True})
+    lyrics = """WOMAN [music] ♪ I love JavaScript so much, ♪ [music] It makes me feel like a pro, ♪ I can create anything, ♪ With just a few lines of code, ♪ [music]"""
 
-    scipy.io.wavfile.write("bark_out.wav", rate=speech["sampling_rate"], data=speech["audio"])
+    inputs = bark_processor(
+        text=[lyrics],
+        return_tensors="pt",
+    )
+
+    speech_values = bark_model.generate(**inputs, do_sample=True)
+    scipy.io.wavfile.write("bark_out.wav", rate=speech["sampling_rate"], data=speech_values["audio"])
     return send_file("bark_out.wav")
 
 
+@app.route('/player/get-track-v2')
+def get_track():
+    inputs = fb_processor(
+        text=["80s pop track with bassy drums and synth", "90s rock song with loud guitars and heavy drums"],
+        padding=True,
+        return_tensors="pt",
+    )
+
+    audio_values = fb_model.generate(**inputs, max_new_tokens=512)
+    scipy.io.wavfile.write("music_out.wav", rate=speech["sampling_rate"], data=audio_values["audio"])
+    return send_file("music_out.wav")
+
 if __name__ == '__main__':
+    bark_processor = AutoProcessor.from_pretrained("suno/bark")
+    bark_model = AutoModel.from_pretrained("suno/bark")
+
+    fb_processor = AutoProcessor.from_pretrained("facebook/musicgen-medium")
+    fb_model = MusicgenForConditionalGeneration.from_pretrained("facebook/musicgen-medium")
+
     app.run(debug=True, host='0.0.0.0', port=80)
