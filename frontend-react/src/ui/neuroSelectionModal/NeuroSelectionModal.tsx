@@ -32,10 +32,10 @@ const NeuroSelectionModal = (props: Props) => {
                     },
                 }}
             >
-                <DialogTitle>Нейро-режим</DialogTitle>
+                <DialogTitle>Нейрорежим</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        Введите текстовый запрос для генерации нейро-трека. От подробности описания зависит результат генерации.
+                        Введите текстовый запрос для генерации нейротрека. От подробности описания зависит результат генерации.
                     </DialogContentText>
                     <TextField
                         autoFocus

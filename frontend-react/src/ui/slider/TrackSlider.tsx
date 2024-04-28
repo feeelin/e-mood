@@ -27,7 +27,14 @@ const TrackSlider = (props: Props) => {
         <div className={classes.container}>
             <Box  sx={{ width: '90%' }}>
                 {/*@ts-ignore*/}
-                <Slider value={props.currentDuration} max={maxValue} marks={marks} color={'secondary'} fullWidth {...props}></Slider>
+                <Slider
+                    sx={{
+                        '& .MuiSlider-thumb': {
+                            borderRadius: '1px',
+                            width: '0px',
+                        },
+                    }}
+                    value={props.currentDuration} max={maxValue} marks={marks} color={'secondary'} fullWidth {...props}></Slider>
             </Box>
         </div>
     );

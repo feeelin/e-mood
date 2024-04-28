@@ -35,7 +35,7 @@ const IconWithSubtitle = (props: Props) => {
         if(props.onClick){
             props.onClick()
         }
-        props.setActive(!props.active)
+        // props.setActive(!props.active)
     }
 
     return (

@@ -4,6 +4,7 @@ import classes from './header.module.css'
 import ProfileMenuWIthActions from "../../modules/profileMenuWithActions/ProfileMenuWIthActions.tsx";
 import PlaylistBrowserMenu from "../../modules/playlistBrowserMenu/PlaylistBrowserMenu.tsx";
 import PlaylistsList from "../playlistsList/PlaylistsList.tsx";
+import FileUpload from "../FileUpload/FileUpload.tsx";
 
 const Header = () => {
     return (

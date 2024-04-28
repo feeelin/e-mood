@@ -18,6 +18,13 @@
     overflow: hidden;
 }
 
+.textContainerNeuro{
+    display: flex;
+    flex-direction: column;
+    color: gray;
+    overflow: hidden;
+}
+
 .textContainer > h2{
     font-size: 2vh;
 }

@@ -3,6 +3,7 @@ import React from 'react';
 import {Box, Drawer, ListItem, ListItemButton, ListItemText} from "@mui/material";
 import Divider from "@mui/material/Divider";
 import {useKeycloak} from "@react-keycloak/web";
+import FileUpload from "../../components/FileUpload/FileUpload.tsx";
 
 
 interface Props {
@@ -35,14 +36,25 @@ const ProfileDrawer = (props: Props) => {
                             </ListItem>
                         </div>
                         :
-                        <ListItem disablePadding>
-                            <ListItemButton onClick={(event) => {
-                                props.authAction()
-                                console.log(event)
-                            }}>
-                                <ListItemText primary={'Войти'} />
-                            </ListItemButton>
-                        </ListItem>
+                        <div>
+                            <ListItem disablePadding>
+                                <ListItemButton onClick={(event) => {
+                                    props.authAction()
+                                    console.log(event)
+                                }}>
+                                    <ListItemText primary={'Войти'} />
+
+                                </ListItemButton>
+                            </ListItem>
+                            <ListItem>
+                                <ListItemButton>
+                                    <FileUpload/>
+                                </ListItemButton>
+
+                            </ListItem>
+                        </div>
+
+
                 }
                 <Divider />
             </Box>

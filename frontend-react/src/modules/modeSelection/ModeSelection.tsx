@@ -31,8 +31,8 @@ const ModeSelection = (props: Props) => {
         if(neuroActive){
             setPlaylistActive(false);
             setNeuroDescription('Сейчас играет')
-        }else{
-            setNeuroDescription('Выключено')
+        } else {
+            setNeuroDescription('Скоро появится!')
         }
     }, [neuroActive]);
 
